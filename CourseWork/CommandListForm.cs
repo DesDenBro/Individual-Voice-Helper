@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace CourseWork
@@ -26,23 +27,10 @@ namespace CourseWork
 
             InitializeComponent();
 
-            StreamReader fs = new StreamReader(Application.StartupPath + @"\Commands.cmds");
-
-            List<string> readCommands = new List<string>();
-
-            while (true)
+            foreach (var part in CourseWork.Properties.Resources.Commands.Split('\n'))
             {
-                string temp = fs.ReadLine();
-
-                if (temp == null) break;
-
-                readCommands.Add(temp);
-            }
-
-            foreach (var command in readCommands)
-            {
-                _formsNames.Add(command.Split('|')[0].Trim());
-                _commands.Add(command.Split('|')[0].Trim(), command.Split('|')[1].Split('/'));
+                _formsNames.Add(part.Split('|')[0].Trim());
+                _commands.Add(part.Split('|')[0].Trim(), part.Split('|')[1].Split('/'));
             }    
         }
 

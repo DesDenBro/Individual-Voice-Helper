@@ -71,6 +71,18 @@ namespace CourseWork.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AllFroms | open commands : 1 / open %bookmark_name% : 2 / open %program_name% : 3
+        ///MainForm | create a new event : 1 / create event : 2
+        ///AddEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6
+        ///EditEventFrom | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6.
+        /// </summary>
+        internal static string Commands {
+            get {
+                return ResourceManager.GetString("Commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap happened {

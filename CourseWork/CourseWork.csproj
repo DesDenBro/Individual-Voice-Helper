@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -202,6 +205,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Commands.txt" />
     <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +221,7 @@
     <None Include="Resources\in_process.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icon.ico" />
     <Content Include="MainDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
