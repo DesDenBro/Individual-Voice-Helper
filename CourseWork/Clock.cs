@@ -123,7 +123,7 @@ namespace CourseWork
         // Установить время на часах
         public void setTime(DateTime dateTime)
         {
-            _date.Value = dateTime;
+            //_date.va = dateTime;
 
             _hour = dateTime.Hour;
             if (_hour >= 12)

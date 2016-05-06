@@ -95,7 +95,7 @@ namespace CourseWork
                     _objects.Add(_programs[i].Name);
 
             for (int i = 0; i < User.GetUser().EventList.Count; i++)
-                    _objects.Add("event " + TranslitWord.GetTranslit(User.GetUser().EventList[i].Name));
+                    _objects.Add("event " + User.GetUser().EventList[i].TranslitirationName);
 
             GrammarBuilder speech = new GrammarBuilder();
             speech.Append(_names);
@@ -161,8 +161,15 @@ namespace CourseWork
         // Установить соединение с микрофоном
         public void setDefaultRecordDevice()
         {
-            _recongnition.RequestRecognizerUpdate();
-            _recongnition.SetInputToDefaultAudioDevice();
+            try
+            {
+                _recongnition.RequestRecognizerUpdate();
+                _recongnition.SetInputToDefaultAudioDevice();
+            }
+            catch
+            {
+                throw new Exception("Connect microphone to your desktop and restart application!");
+            }
         }
 
         // Обновить грамматику
@@ -183,35 +190,39 @@ namespace CourseWork
 
         private void Rec_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            string command = e.Result.Text;
-            if (_state == State.ListenForSet)
+            try
             {
-                _userCommand = _elaborationToUserCommand + command;
-                _state = State.ListenAll;
-                refreshGrammar();
-                return;
-            }
-
-            string[] parts = command.Split(' ');
-
-            for (int i = 0; i < parts.Length; i++)
-            {
-                if (parts[i] == "open" || parts[i] == "show")
+                string command = e.Result.Text;
+                if (_state == State.ListenForSet)
                 {
-                    if (parts[i + 1] == "commands")
-                    { CommandListForm clf = new CommandListForm(); clf.ShowDialog(); return; }
-                    OpenCommand(parts, i + 1); return;
+                    _userCommand = _elaborationToUserCommand + command;
+                    _state = State.ListenAll;
+                    refreshGrammar();
+                    return;
                 }
 
-                if (parts[i] == "create")
-                { AddCommand(parts, i + 1); return; }
+                string[] parts = command.Split(' ');
 
-                if (parts[i] == "edit")
-                { EditCommand(parts, i + 1); return; }
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    if (parts[i] == "open" || parts[i] == "show")
+                    {
+                        if (parts[i + 1] == "commands")
+                        { CommandListForm clf = new CommandListForm(); clf.ShowDialog(); return; }
+                        OpenCommand(parts, i + 1); return;
+                    }
 
-                if (parts[i] == "set")
-                { SetCommand(parts, i + 1); return; }
+                    if (parts[i] == "create")
+                    { AddCommand(parts, i + 1); return; }
+
+                    if (parts[i] == "edit")
+                    { EditCommand(parts, i + 1); return; }
+
+                    if (parts[i] == "set")
+                    { SetCommand(parts, i + 1); return; }
+                }
             }
+            catch { }
         }
 
         private void OpenCommand(string[] parts, int startIDForReadParts)
@@ -253,13 +264,13 @@ namespace CourseWork
                 foreach (var item in User.GetUser().EventList)
                 {
                     string fullWord = "";
-                    for (int i = 0; i < item.Name.Split(' ').Length; i++)
+                    for (int i = 0; i < item.TranslitirationName.Split(' ').Length; i++)
                     {
                         if (startIDForReadParts + 1 + i >= parts.Length) break;
                         else fullWord += parts[startIDForReadParts + 1 + i] + " ";
                     }
 
-                    if (fullWord.Trim() == item.Name.Trim())
+                    if (fullWord.Trim() == item.TranslitirationName.Trim())
                     {
                         _userCommand = "open/event/" + item.ID;
                     }
@@ -291,13 +302,13 @@ namespace CourseWork
                 foreach (var item in User.GetUser().EventList)
                 {
                     string fullWord = "";
-                    for (int i = 0; i < item.Name.Split(' ').Length; i++)
+                    for (int i = 0; i < item.TranslitirationName.Split(' ').Length; i++)
                     {
                         if (startIDForReadParts + 1 + i >= parts.Length) break;
                         else fullWord += parts[startIDForReadParts + 1 + i] + " ";
                     }
 
-                    if (fullWord.Trim() == item.Name.Trim())
+                    if (fullWord.Trim() == item.TranslitirationName.Trim())
                     {
                         _userCommand = "edit/event/" + item.ID;
                     }

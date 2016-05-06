@@ -100,7 +100,7 @@ namespace CourseWork
         {
             userVoice_ss.Text = VoiceAnalizer.getVoiceAnalizer().UserCommand;
 
-            if (VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/').Length > 2)
+            try
             {
                 if (VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[1] == "event")
                 {
@@ -116,13 +116,14 @@ namespace CourseWork
 
                         case "edit":
                             editEvent(Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]) - 1);
-                            break;                     
+                            break;
                     }
                     userVoice_ss.Text = "";
                     VoiceAnalizer.getVoiceAnalizer().clearUserCommand();
 
-                }     
+                }
             }
+            catch { }
         }
 
         #endregion

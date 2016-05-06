@@ -11,6 +11,7 @@ namespace CourseWork
         // Переменные
         private int _ID;
         private string _name;
+        private string _transliterationName;
         private string _text;
         private DateTime _date;
         private bool _isHappened = false;
@@ -23,6 +24,7 @@ namespace CourseWork
         // Свойства переменных
         public int ID { get { return _ID; } }
         public string Name { get { return _name; } set { _name = value; } }
+        public string TranslitirationName { get { return _transliterationName; } }
         public string Text { get { return _text; } set { _text = value; } }
         public DateTime Date { get { return _date; } set { _date = value; } }
         public bool IsHappened  { get { return _isHappened; } }
@@ -81,16 +83,32 @@ namespace CourseWork
         {
             try
             {
-                this._ID = id;                  // Индекс позволяет отследить код события, записанный в БД
-                _name = name;                         // Имя события, которое кратко излагает суть
-                _text = text;                         // Подробное описание события
-                _date = date;                         // Дата проведения события
-                _isHappened = isHappend;              // Установка, было ли событие проведено
-                _isHappenedNote = isHappenedNote;     // Запись о том, как прошло событие
-                _isCanceled = isCanceled;             // Установка, было ли событие отменено
-                _isCanceledReason = isCanceledReason; // Запись, объясняющая причину отмены события
-                _timeToGetNotify = timeToGetNotify;   // Время, во сколько должно сработать оповещение
-                _notifyGot = notifyGot;               // Сработало ли оповещение
+                // Индекс позволяет отследить код события, записанный в БД
+                this._ID = id;
+
+                // Имя события, которое кратко излагает суть
+                _name = name; 
+                // Имя события в транслите без лишних символов                        
+                _transliterationName = TranslitWord.GetTranslit(name);
+                // Подробное описание события
+                _text = text;
+                // Дата проведения события                     
+                _date = date;
+
+                // Установка, было ли событие проведено 
+                _isHappened = isHappend;
+                // Запись о том, как прошло событие       
+                _isHappenedNote = isHappenedNote;
+
+                // Установка, было ли событие отменено
+                _isCanceled = isCanceled;
+                // Запись, объясняющая причину отмены события
+                _isCanceledReason = isCanceledReason;
+
+                // Время, во сколько должно сработать оповещение
+                _timeToGetNotify = timeToGetNotify;
+                // Сработало ли оповещение
+                _notifyGot = notifyGot;               
             }
             catch { }
         }
@@ -106,7 +124,8 @@ namespace CourseWork
             try
             {
                 this._ID = id;                               
-                _name = name;                        
+                _name = name;
+                _transliterationName = TranslitWord.GetTranslit(name);                     
                 _text = text;                         
                 _date = date;
                 _timeToGetNotify = timeToGetNotify;   

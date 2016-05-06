@@ -33,15 +33,12 @@
             this.Language_l = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Profile_pan = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.showCommands_btn = new System.Windows.Forms.Button();
             this.VoiceHelper_pan = new System.Windows.Forms.Panel();
-            this.objects_gb = new System.Windows.Forms.GroupBox();
-            this.ControlBM_btn = new System.Windows.Forms.Button();
             this.controlPrograms_btn = new System.Windows.Forms.Button();
+            this.ControlBM_btn = new System.Windows.Forms.Button();
             this.Common_pan.SuspendLayout();
-            this.Profile_pan.SuspendLayout();
             this.VoiceHelper_pan.SuspendLayout();
-            this.objects_gb.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu_lb
@@ -64,15 +61,16 @@
             this.Common_pan.Name = "Common_pan";
             this.Common_pan.Size = new System.Drawing.Size(394, 277);
             this.Common_pan.TabIndex = 1;
+            this.Common_pan.Tag = "Common";
             // 
             // Language_l
             // 
             this.Language_l.AutoSize = true;
             this.Language_l.Location = new System.Drawing.Point(11, 16);
             this.Language_l.Name = "Language_l";
-            this.Language_l.Size = new System.Drawing.Size(90, 13);
+            this.Language_l.Size = new System.Drawing.Size(191, 13);
             this.Language_l.TabIndex = 2;
-            this.Language_l.Text = "Choose language";
+            this.Language_l.Text = "Choose language (it doesn`t work now)";
             // 
             // comboBox1
             // 
@@ -90,82 +88,72 @@
             this.Profile_pan.BackgroundImage = global::CourseWork.Properties.Resources.settings;
             this.Profile_pan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Profile_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Profile_pan.Controls.Add(this.button1);
             this.Profile_pan.Location = new System.Drawing.Point(568, 13);
             this.Profile_pan.Name = "Profile_pan";
             this.Profile_pan.Size = new System.Drawing.Size(394, 277);
             this.Profile_pan.TabIndex = 2;
+            this.Profile_pan.Tag = "Profile";
             // 
-            // button1
+            // showCommands_btn
             // 
-            this.button1.Location = new System.Drawing.Point(20, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.showCommands_btn.Location = new System.Drawing.Point(268, 16);
+            this.showCommands_btn.Name = "showCommands_btn";
+            this.showCommands_btn.Size = new System.Drawing.Size(112, 41);
+            this.showCommands_btn.TabIndex = 0;
+            this.showCommands_btn.Text = "Show voice commands";
+            this.showCommands_btn.UseVisualStyleBackColor = true;
+            this.showCommands_btn.Click += new System.EventHandler(this.showCommands_btn_Click);
             // 
             // VoiceHelper_pan
             // 
             this.VoiceHelper_pan.BackgroundImage = global::CourseWork.Properties.Resources.settings;
             this.VoiceHelper_pan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.VoiceHelper_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VoiceHelper_pan.Controls.Add(this.objects_gb);
-            this.VoiceHelper_pan.Location = new System.Drawing.Point(568, 305);
+            this.VoiceHelper_pan.Controls.Add(this.controlPrograms_btn);
+            this.VoiceHelper_pan.Controls.Add(this.showCommands_btn);
+            this.VoiceHelper_pan.Controls.Add(this.ControlBM_btn);
+            this.VoiceHelper_pan.Location = new System.Drawing.Point(568, 303);
             this.VoiceHelper_pan.Name = "VoiceHelper_pan";
             this.VoiceHelper_pan.Size = new System.Drawing.Size(394, 277);
             this.VoiceHelper_pan.TabIndex = 3;
-            // 
-            // objects_gb
-            // 
-            this.objects_gb.Controls.Add(this.ControlBM_btn);
-            this.objects_gb.Controls.Add(this.controlPrograms_btn);
-            this.objects_gb.Location = new System.Drawing.Point(14, 17);
-            this.objects_gb.Name = "objects_gb";
-            this.objects_gb.Size = new System.Drawing.Size(180, 66);
-            this.objects_gb.TabIndex = 2;
-            this.objects_gb.TabStop = false;
-            this.objects_gb.Text = "Objects for start";
-            // 
-            // ControlBM_btn
-            // 
-            this.ControlBM_btn.Location = new System.Drawing.Point(6, 19);
-            this.ControlBM_btn.Name = "ControlBM_btn";
-            this.ControlBM_btn.Size = new System.Drawing.Size(83, 41);
-            this.ControlBM_btn.TabIndex = 2;
-            this.ControlBM_btn.Text = "Control bookmarks";
-            this.ControlBM_btn.UseVisualStyleBackColor = true;
-            this.ControlBM_btn.Click += new System.EventHandler(this.ControlBM_btn_Click);
+            this.VoiceHelper_pan.Tag = "Voice helper";
             // 
             // controlPrograms_btn
             // 
-            this.controlPrograms_btn.Location = new System.Drawing.Point(95, 19);
+            this.controlPrograms_btn.Location = new System.Drawing.Point(15, 63);
             this.controlPrograms_btn.Name = "controlPrograms_btn";
-            this.controlPrograms_btn.Size = new System.Drawing.Size(79, 41);
+            this.controlPrograms_btn.Size = new System.Drawing.Size(122, 41);
             this.controlPrograms_btn.TabIndex = 0;
             this.controlPrograms_btn.Text = "Control programs";
             this.controlPrograms_btn.UseVisualStyleBackColor = true;
             this.controlPrograms_btn.Click += new System.EventHandler(this.controlPrograms_btn_Click);
+            // 
+            // ControlBM_btn
+            // 
+            this.ControlBM_btn.Location = new System.Drawing.Point(15, 16);
+            this.ControlBM_btn.Name = "ControlBM_btn";
+            this.ControlBM_btn.Size = new System.Drawing.Size(122, 41);
+            this.ControlBM_btn.TabIndex = 2;
+            this.ControlBM_btn.Text = "Control bookmarks";
+            this.ControlBM_btn.UseVisualStyleBackColor = true;
+            this.ControlBM_btn.Click += new System.EventHandler(this.ControlBM_btn_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 592);
-            this.Controls.Add(this.VoiceHelper_pan);
             this.Controls.Add(this.Common_pan);
             this.Controls.Add(this.Profile_pan);
             this.Controls.Add(this.menu_lb);
+            this.Controls.Add(this.VoiceHelper_pan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Common_pan.ResumeLayout(false);
             this.Common_pan.PerformLayout();
-            this.Profile_pan.ResumeLayout(false);
             this.VoiceHelper_pan.ResumeLayout(false);
-            this.objects_gb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -179,8 +167,7 @@
         private System.Windows.Forms.Label Language_l;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button ControlBM_btn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox objects_gb;
+        private System.Windows.Forms.Button showCommands_btn;
         private System.Windows.Forms.Button controlPrograms_btn;
     }
 }
