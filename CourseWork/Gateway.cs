@@ -137,8 +137,8 @@ namespace CourseWork
                         _dataReader["IsHappenedNote"].ToString().Trim(),                      // IsHappenedNote
                         Convert.ToBoolean(_dataReader["IsCanceled"].ToString().Trim()),       // IsCanceled
                         _dataReader["IsCanceledReason"].ToString().Trim(),                    // IsCanceledReason
-                        Convert.ToDateTime(_dataReader["TimeToGetNotify"]),                   // TimeToGetNotify
-                        Convert.ToBoolean(_dataReader["NotifyGot"].ToString().Trim())         // NotifyGot
+                        Convert.ToDateTime(_dataReader["NotificationDateTime"]),                   // TimeToGetNotify
+                        Convert.ToBoolean(_dataReader["NotificationGot"].ToString().Trim())         // NotifyGot
                         )); 
                 }
             }
@@ -168,8 +168,8 @@ namespace CourseWork
             dr["IsHappenedNote"] = eventForAdd.IsHappenedNote;
             dr["IsCanceled"] = eventForAdd.IsCanceled.ToString();
             dr["IsCanceledReason"] = eventForAdd.IsCanceledReason;
-            dr["TimeToGetNotify"] = eventForAdd.TimeToGetNotify;
-            dr["NotifyGot"] = eventForAdd.NotifyGot.ToString();
+            dr["NotificationDateTime"] = eventForAdd.NotificationDateTime;
+            dr["NotificationGot"] = eventForAdd.NotificationGot.ToString();
             // Загрузка строки в старый образ
             oldData.Tables[0].Rows.Add(dr);
             // Загрузка в основную БД 
@@ -199,8 +199,8 @@ namespace CourseWork
                     dr["IsHappenedNote"] = eventForEdit.IsHappenedNote;
                     dr["IsCanceled"] = eventForEdit.IsCanceled.ToString();
                     dr["IsCanceledReason"] = eventForEdit.IsCanceledReason;
-                    dr["TimeToGetNotify"] = eventForEdit.TimeToGetNotify;
-                    dr["NotifyGot"] = eventForEdit.NotifyGot.ToString();
+                    dr["NotificationDateTime"] = eventForEdit.NotificationDateTime;
+                    dr["NotificationGot"] = eventForEdit.NotificationGot.ToString();
                     break;
                 }
                 i++;

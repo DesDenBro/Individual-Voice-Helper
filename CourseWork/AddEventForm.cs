@@ -9,7 +9,7 @@ namespace CourseWork
         
         Event _newEvent;
         Clock _date;
-        Clock _notify;
+        Clock _notification;
 
         #endregion
 
@@ -24,8 +24,8 @@ namespace CourseWork
             _date = new Clock("Date", 10, eventName_tb.Bottom + 10);
             this.Controls.Add(_date.ClockPanel);
 
-            _notify = new Clock("Time to notify", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
-            this.Controls.Add(_notify.ClockPanel);
+            _notification = new Clock("Notification", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            this.Controls.Add(_notification.ClockPanel);
 
             voiceChecker.Start();
         }
@@ -36,7 +36,7 @@ namespace CourseWork
             DateTime.TryParse(date, out tempDate);
 
             if (type == "main") _date.setDate(tempDate);
-            if (type == "notify") _notify.setDate(tempDate);
+            if (type == "notification") _notification.setDate(tempDate);
         }
 
         private void voiceChecker_Tick(object sender, EventArgs e)
@@ -56,12 +56,12 @@ namespace CourseWork
                         case "event time": _date.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                             Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[0]),
                             Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[1]), 0)); break;
-                        case "notify time": _notify.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                        case "notification time": _notification.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                             Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[0]),
                             Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[1]), 0)); break;
 
                         case "event date": readDate("main", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
-                        case "event notify date": readDate("notify", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
+                        case "event notification date": readDate("notification", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
                     }
 
                     voiceCommand_ss.Text = "";
@@ -78,8 +78,8 @@ namespace CourseWork
                 if (eventName_tb.Text != "" &&
                     eventText_tb.Text != "" &&
                     _date.ChoosenDateTime >= DateTime.Now &&
-                    _notify.ChoosenDateTime >= DateTime.Now &&
-                    _notify.ChoosenDateTime < _date.ChoosenDateTime)
+                    _notification.ChoosenDateTime >= DateTime.Now &&
+                    _notification.ChoosenDateTime < _date.ChoosenDateTime)
                 {
                     _newEvent = new Event(User.GetUser().EventList.Count + 1,
                                          eventName_tb.Text,
@@ -89,7 +89,7 @@ namespace CourseWork
                                          "",
                                          false,
                                          "",
-                                         _notify.ChoosenDateTime,
+                                         _notification.ChoosenDateTime,
                                          false);
 
                     this.DialogResult = DialogResult.OK;

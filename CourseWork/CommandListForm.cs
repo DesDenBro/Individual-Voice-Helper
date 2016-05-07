@@ -80,10 +80,12 @@ namespace CourseWork
             _commandsPanel.BackColor = Color.White;
             if (_commands.ContainsKey(_activeFormName))
             {
+                _activePanelName = _activeFormName;
                 showCommandsForChoosenForm(_activeFormName);
             }
             else
             {
+                _activePanelName = _formsNames[0];
                 showCommandsForChoosenForm(_formsNames[0]);
             }
 

@@ -365,11 +365,11 @@ namespace CourseWork
             }
             else
             {
-                eventDate.Text = "Notify at: " + eventForShow.TimeToGetNotify.Day + "."
-                                          + eventForShow.TimeToGetNotify.Month + "."
-                                          + eventForShow.TimeToGetNotify.Year + " "
-                                          + eventForShow.TimeToGetNotify.Hour + ":"
-                                          + eventForShow.TimeToGetNotify.Minute;
+                eventDate.Text = "Notification at: " + eventForShow.NotificationDateTime.Day + "."
+                                          + eventForShow.NotificationDateTime.Month + "."
+                                          + eventForShow.NotificationDateTime.Year + " "
+                                          + eventForShow.NotificationDateTime.Hour + ":"
+                                          + eventForShow.NotificationDateTime.Minute;
             }
             eventDate.Name = eventForShow.ID.ToString();
             eventDate.Left = neededEventPanel.Width - eventDate.Width - 10;
@@ -556,7 +556,7 @@ namespace CourseWork
             {
                 _eventList[_choosenIndexInEventListNow] = eef.CorrectEvent;
                 Gateway.updateEventInDB(_eventList[_choosenIndexInEventListNow]);
-
+                VoiceAnalizer.getVoiceAnalizer().refreshGrammar();
                 if (_eventPanelStatus == EventInfo.Compressed)
                 {
                     reCreateMainForm();
@@ -936,8 +936,8 @@ namespace CourseWork
         // Проверка, нужно ли вывести уведомление для следующего события
         private bool CheckTime(Event eventForCheck)
         {
-            if (eventForCheck.TimeToGetNotify <= DateTime.Now &&
-                !eventForCheck.NotifyGot && !eventForCheck.IsHappened && !eventForCheck.IsCanceled)  return true;
+            if (eventForCheck.NotificationDateTime <= DateTime.Now &&
+                !eventForCheck.NotificationGot && !eventForCheck.IsHappened && !eventForCheck.IsCanceled)  return true;
            
             return false;
         }
@@ -981,7 +981,7 @@ namespace CourseWork
         // Указываем, что сообщение дошло до глаза пользователя
         private void setNotificationShowed()
         {
-            _eventList[_indexCheckingEventNow].NotifyGot = true;
+            _eventList[_indexCheckingEventNow].NotificationGot = true;
             Gateway.updateEventInDB(_eventList[_indexCheckingEventNow]);
         }
 

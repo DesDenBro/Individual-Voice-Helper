@@ -64,9 +64,9 @@
             this.eventName_l.AutoSize = true;
             this.eventName_l.Location = new System.Drawing.Point(12, 9);
             this.eventName_l.Name = "eventName_l";
-            this.eventName_l.Size = new System.Drawing.Size(54, 13);
+            this.eventName_l.Size = new System.Drawing.Size(64, 13);
             this.eventName_l.TabIndex = 4;
-            this.eventName_l.Text = "Event title";
+            this.eventName_l.Text = "Event name";
             // 
             // eventName_tb
             // 

@@ -84,7 +84,7 @@ namespace CourseWork
             _commands = new Choices(new string[] { "show", "open", "create", "edit", "set" });
             _objects = new Choices(new string[] 
             { "commands", "event", "a new event",
-                "event name", "event text", "event time", "notify time", "event date", "event notify date" });
+                "event name", "event text", "event time", "notification time", "event date", "notification date" });
 
             for (int i = 0; i < _bookmarks.Count; i++)
                 if (_bookmarks[i].Name != "")
@@ -161,15 +161,15 @@ namespace CourseWork
         // Установить соединение с микрофоном
         public void setDefaultRecordDevice()
         {
-            try
-            {
+           try
+           {
                 _recongnition.RequestRecognizerUpdate();
                 _recongnition.SetInputToDefaultAudioDevice();
-            }
-            catch
-            {
-                throw new Exception("Connect microphone to your desktop and restart application!");
-            }
+           }
+           catch
+           {
+               throw new Exception("Connect microphone to your desktop and restart application!");
+           }
         }
 
         // Обновить грамматику
@@ -332,14 +332,14 @@ namespace CourseWork
                     _state = State.ListenForSet;
                     break;
                 case "event time":
-                case "notify time":
+                case "notification time":
                     _elaborationToUserCommand = "set/" + fullWord.Trim() + "/";
                     _recongnition.UnloadAllGrammars();
                     createTimeGrammar();
                     _state = State.ListenForSet;
                     break;
                 case "event date":
-                case "event notify date":
+                case "notification date":
                     _elaborationToUserCommand = "set/" + fullWord.Trim() + "/";
                     _recongnition.UnloadAllGrammars();
                     createDateGrammar();

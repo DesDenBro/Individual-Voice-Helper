@@ -16,7 +16,7 @@ namespace CourseWork
 
         private Event _tempEvent;
         private Clock _date;
-        private Clock _notify;
+        private Clock _notification;
 
         public Event CorrectEvent { get { return _tempEvent; } }
 
@@ -35,9 +35,9 @@ namespace CourseWork
             _date.setTime(eventForEdit.Date);
             this.Controls.Add(_date.ClockPanel);
 
-            _notify = new Clock("Time to notify", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
-            _notify.setTime(eventForEdit.TimeToGetNotify);
-            this.Controls.Add(_notify.ClockPanel);
+            _notification = new Clock("Notification", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            _notification.setTime(eventForEdit.NotificationDateTime);
+            this.Controls.Add(_notification.ClockPanel);
 
             voiceChecker.Start();
         }
@@ -47,24 +47,24 @@ namespace CourseWork
             if (eventName_tb.Text != "" &&
                     eventText_tb.Text != "" &&
                     _date.ChoosenDateTime >= DateTime.Now &&
-                    _notify.ChoosenDateTime >= DateTime.Now &&
-                    _notify.ChoosenDateTime < _date.ChoosenDateTime)
+                    _notification.ChoosenDateTime >= DateTime.Now &&
+                    _notification.ChoosenDateTime < _date.ChoosenDateTime)
             {
                 _tempEvent.Name = eventName_tb.Text;
                 _tempEvent.Text = eventText_tb.Text;
                 _tempEvent.Date = _date.ChoosenDateTime;
-                if (_tempEvent.TimeToGetNotify < DateTime.Now)
+                if (_tempEvent.NotificationDateTime < DateTime.Now)
                 {
-                    _tempEvent.NotifyGot = false;
+                    _tempEvent.NotificationGot = false;
                 }
-                _tempEvent.TimeToGetNotify = _notify.ChoosenDateTime;
+                _tempEvent.NotificationDateTime = _notification.ChoosenDateTime;
 
                 voiceChecker.Stop();
                 this.DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show("Определенные данные введены некорректно!");
+                MessageBox.Show("Some data incorrect!");
             }
         }
 
@@ -78,7 +78,7 @@ namespace CourseWork
             DateTime.TryParse(date, out tempDate);
 
             if (type == "main") _date.setDate(tempDate);
-            if (type == "notify") _notify.setDate(tempDate);
+            if (type == "notification") _notification.setDate(tempDate);
         }
 
         private void voiceChecker_Tick(object sender, EventArgs e)
@@ -99,13 +99,13 @@ namespace CourseWork
                             _date.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                  Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[0]),
                                  Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[1]), 0)); break;
-                        case "notify time":
-                            _notify.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                        case "notification time":
+                            _notification.setTime(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                 Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[0]),
                                 Convert.ToInt32(VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2].Split(' ')[1]), 0)); break;
 
                         case "event date": readDate("main", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
-                        case "event notify date": readDate("notify", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
+                        case "notification date": readDate("notification", VoiceAnalizer.getVoiceAnalizer().UserCommand.Split('/')[2]); break;
                     }
 
                     voiceCommand_ss.Text = "";

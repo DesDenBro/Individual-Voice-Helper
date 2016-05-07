@@ -1,4 +1,4 @@
 AllFroms | open commands : 1 / open %bookmark_name% : 2 / open %program_name% : 3
 MainForm | create a new event : 1 / create event : 2
-AddEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6
-EditEventFrom | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6
+AddEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notification time : 4 / set event date : 5 / set notification date : 6
+EditEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notification time : 4 / set event date : 5 / set notification date : 6

@@ -18,12 +18,12 @@ namespace CourseWork
         private string _isHappenedNote;
         private bool _isCanceled = false;
         private string _isCanceledReason;
-        private DateTime _timeToGetNotify;
-        private bool _notifyGot = false;
+        private DateTime _notificationDateTime;
+        private bool _notificationGot = false;
 
         // Свойства переменных
         public int ID { get { return _ID; } }
-        public string Name { get { return _name; } set { _name = value; } }
+        public string Name { get { return _name; } set { _name = value; _transliterationName = TranslitWord.GetTranslit(_name); } }
         public string TranslitirationName { get { return _transliterationName; } }
         public string Text { get { return _text; } set { _text = value; } }
         public DateTime Date { get { return _date; } set { _date = value; } }
@@ -39,8 +39,8 @@ namespace CourseWork
             get { return _isCanceledReason; }
             set { if (_isCanceled) _isCanceledReason = value; }
         }
-        public DateTime TimeToGetNotify { get { return _timeToGetNotify; } set { _timeToGetNotify = value; } }
-        public bool NotifyGot { get { return _notifyGot; } set { _notifyGot = value; } }
+        public DateTime NotificationDateTime { get { return _notificationDateTime; } set { _notificationDateTime = value; } }
+        public bool NotificationGot { get { return _notificationGot; } set { _notificationGot = value; } }
 
         // Отдельные методы
         public bool setEventIsHappenedTrue()
@@ -78,7 +78,7 @@ namespace CourseWork
                      string isHappenedNote,
                      bool isCanceled,
                      string isCanceledReason,
-                     DateTime timeToGetNotify,
+                     DateTime notificationDateTime,
                      bool notifyGot)
         {
             try
@@ -106,9 +106,9 @@ namespace CourseWork
                 _isCanceledReason = isCanceledReason;
 
                 // Время, во сколько должно сработать оповещение
-                _timeToGetNotify = timeToGetNotify;
+                _notificationDateTime = notificationDateTime;
                 // Сработало ли оповещение
-                _notifyGot = notifyGot;               
+                _notificationGot = notifyGot;               
             }
             catch { }
         }
@@ -128,8 +128,8 @@ namespace CourseWork
                 _transliterationName = TranslitWord.GetTranslit(name);                     
                 _text = text;                         
                 _date = date;
-                _timeToGetNotify = timeToGetNotify;   
-                _notifyGot = notifyGot;                     
+                _notificationDateTime = timeToGetNotify;   
+                _notificationGot = notifyGot;                     
             }
             catch { }
         }
