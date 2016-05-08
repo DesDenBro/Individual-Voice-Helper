@@ -16,7 +16,7 @@ namespace CourseWork
         //  6. Доработать выбор времени (можно не выбирать время для предварительного уведомления)
         //DONE  7. Сделать иконку приложения
         //DONE  8. Прикрутить голосовое управление к командам: добавить событие, изменить событие.
-        //DONE  9. НАПИШИ КОММЕНТАРИИ!!!
+        //  9. ПИШИ КОММЕНТАРИИ!!!
         //DONE  10. На детализированной панели не отображается время, когда нужно оповестить человека
         //DONE  11. Может добавить задний фон?
         //DONE  12. Уведомление не одно, а дохрена
@@ -34,7 +34,8 @@ namespace CourseWork
         //DONE  24. Загрузка bookmarks в БД и выгрузка их оттуда. При добавлении сверка с уже исмеющимися.
         //DONE  25. Если создать событие, раскрыть его, дождаться уведомления и шелкнуть по нему, что кнопка назад не работает.
         //DONE  26. Добавить возможность добавлять приложения для запуска их голосом.
-        //  27. Доделать голосовой вызов и управление формой EditEventForm (вызывает очень много раз окно + не работает голосовое управление)
+        //DONE  27. Доделать голосовой вызов и управление формой EditEventForm (вызывает очень много раз окно + не работает голосовое управление)
+        //  28. Тот факт, что панели создаются в форме MainForm плох. Отвязать от нее в отдельный класс.
         #endregion
 
 
@@ -72,6 +73,9 @@ namespace CourseWork
             if (!_access) this.Close();
             else
             {
+                Control.ControlCollection tempControls = this.Controls;
+                Language.setControlsText(ref tempControls, this.Name);
+
                 CreateTreyIcon();            // Создаем объект для сворачивания программы в трей
                 FillEventList();             // Заполняем _eventList
                 LoadAIForChoosenUser();      // Загружаем голосового помощника для выбранного пользователя
@@ -180,7 +184,7 @@ namespace CourseWork
                                 HappenedBtn.Width = 25;
                                 HappenedBtn.Height = 25;
                                 HappenedBtn.BackColor = Color.Green;
-                                HappenedBtn.Text = "H";
+                                HappenedBtn.Text = Language.getControlText("smallPanelHappened_btn", this.Name);
                                 HappenedBtn.TextAlign = ContentAlignment.MiddleCenter;
                                 HappenedBtn.Left = commonEventPanel.Width - HappenedBtn.Width - 5;
                                 HappenedBtn.Top = commonEventPanel.Height - HappenedBtn.Height - 30;
@@ -193,7 +197,7 @@ namespace CourseWork
                         CanceledBtn.Width = 25;
                         CanceledBtn.Height = 25;
                         CanceledBtn.BackColor = Color.Red;
-                        CanceledBtn.Text = "C";
+                        CanceledBtn.Text = Language.getControlText("smallPanelCanceled_btn", this.Name);
                         CanceledBtn.TextAlign = ContentAlignment.MiddleCenter;
                         CanceledBtn.Left = commonEventPanel.Width - HappenedBtn.Width - 5;
                         CanceledBtn.Top = commonEventPanel.Height - HappenedBtn.Height - 5;
@@ -213,10 +217,10 @@ namespace CourseWork
 
                     // Дата события
                     Label eventDate = new Label();
-                    eventDate.Text = "Date: " + _eventList[i].Date.Day + "."
+                    eventDate.Text = Language.getControlText("smallPanelDate", this.Name) + _eventList[i].Date.Day + "."
                                               + _eventList[i].Date.Month + "."
                                               + _eventList[i].Date.Year + "\r\n"
-                                  + "Time: " + _eventList[i].Date.Hour + " : "
+                                  + Language.getControlText("smallPanelTime", this.Name) + _eventList[i].Date.Hour + " : "
                                               + _eventList[i].Date.Minute;
                     eventDate.Left = commonEventPanel.Width - eventDate.Width - 10;
                     eventDate.Top = 10;
@@ -242,12 +246,12 @@ namespace CourseWork
                         // Кнопка редактирования события
                         Button EditBtn = new Button();
                         EditBtn.Name = _eventList[i].ID.ToString();
-                        EditBtn.Text = "Edit event";
+                        EditBtn.Text = Language.getControlText("smallPanelEdit_btn", this.Name);
                         EditBtn.TextAlign = ContentAlignment.MiddleCenter;
                         EditBtn.Left = 10;
                         EditBtn.Top = eventText.Top + eventText.Height + 3;
                         EditBtn.Height = 29;
-                        EditBtn.Width = 70;
+                        EditBtn.Width = 100;
                         EditBtn.Click += EditBtn_Click;
                         EditBtn.BackColor = Color.FromKnownColor(KnownColor.Control);
                         commonEventPanel.Controls.Add(EditBtn);
@@ -261,28 +265,28 @@ namespace CourseWork
                                 Label note = new Label();
                                 if (_eventList[i].IsCanceled)
                                 {
-                                    note.Text = "Reason of event canceled:\n";
+                                    note.Text = Language.getControlText("smallPanelCanceledReason", this.Name) + "\r\n";
                                     if (_eventList[i].IsCanceledReason.Trim() != "")
                                     {
                                         note.Text += cutText(_eventList[i].IsCanceledReason, 50);
                                     }
                                     else
                                     {
-                                        note.Text += "None";
+                                        note.Text += Language.getControlText("smallPanelNone", this.Name);
                                     }
                                 }
                                 else
                                 {
                                     if (_eventList[i].IsHappened)
                                     {
-                                        note.Text = "Recall about happened event:\n";
+                                        note.Text = Language.getControlText("smallPanelHappenedRecall", this.Name) + "\r\n";
                                         if (_eventList[i].IsHappenedNote.Trim() != "")
                                         {
                                             note.Text += cutText(_eventList[i].IsHappenedNote, 50);
                                         }
                                         else
                                         {
-                                            note.Text += "None";
+                                            note.Text += Language.getControlText("smallPanelNone", this.Name);
                                         }
                                     }
                                 }
@@ -357,7 +361,7 @@ namespace CourseWork
             Label eventDate = new Label();
             if (!_switchBtwDateAndNotify)
             {
-                eventDate.Text = "Event at: " + eventForShow.Date.Day + "."
+                eventDate.Text = Language.getControlText("bigPanelDate", this.Name) + eventForShow.Date.Day + "."
                                           + eventForShow.Date.Month + "."
                                           + eventForShow.Date.Year + " "
                                           + eventForShow.Date.Hour + ":"
@@ -365,7 +369,7 @@ namespace CourseWork
             }
             else
             {
-                eventDate.Text = "Notification at: " + eventForShow.NotificationDateTime.Day + "."
+                eventDate.Text = Language.getControlText("bigPanelNotification", this.Name) + eventForShow.NotificationDateTime.Day + "."
                                           + eventForShow.NotificationDateTime.Month + "."
                                           + eventForShow.NotificationDateTime.Year + " "
                                           + eventForShow.NotificationDateTime.Hour + ":"
@@ -396,12 +400,12 @@ namespace CourseWork
                 // Кнопка редактирования события
                 Button EditBtn = new Button();
                 EditBtn.Name = eventForShow.ID.ToString();
-                EditBtn.Text = "Edit event";
+                EditBtn.Text = Language.getControlText("bigPanelEdit_btn", this.Name); ;
                 EditBtn.TextAlign = ContentAlignment.MiddleCenter;
                 EditBtn.Left = 10;
                 EditBtn.Top = eventText.Top + eventText.Height + 5;
                 EditBtn.Height = 29;
-                EditBtn.Width = 70;
+                EditBtn.Width = 100;
                 EditBtn.Click += EditBtn_Click;
                 EditBtn.BackColor = Color.FromKnownColor(KnownColor.Control);
                 neededEventPanel.Controls.Add(EditBtn);
@@ -414,7 +418,7 @@ namespace CourseWork
                 HappenedBtn.Width = 75;
                 HappenedBtn.Height = 25;
                 HappenedBtn.BackColor = Color.Green;
-                HappenedBtn.Text = "Happened";
+                HappenedBtn.Text = Language.getControlText("bigPanelEventHappened_btn", this.Name);
                 HappenedBtn.TextAlign = ContentAlignment.MiddleCenter;
                 HappenedBtn.Left = neededEventPanel.Width - HappenedBtn.Width - 85;
                 HappenedBtn.Top = EditBtn.Top;
@@ -427,7 +431,7 @@ namespace CourseWork
                 CanceledBtn.Width = 75;
                 CanceledBtn.Height = 25;
                 CanceledBtn.BackColor = Color.Red;
-                CanceledBtn.Text = "Canceled";
+                CanceledBtn.Text = Language.getControlText("bigPanelEventCanceled_btn", this.Name); ;
                 CanceledBtn.TextAlign = ContentAlignment.MiddleCenter;
                 CanceledBtn.Left = neededEventPanel.Width - HappenedBtn.Width - 5;
                 CanceledBtn.Top = EditBtn.Top;
@@ -441,28 +445,28 @@ namespace CourseWork
                 note.BackColor = Color.Transparent;
                 if (eventForShow.IsCanceled)
                 {
-                    note.Text = "Reason of event canceled:\n";
+                    note.Text = Language.getControlText("bigPanelHeppenedRecall", this.Name) + "\r\n";
                     if (eventForShow.IsCanceledReason.Trim() != "")
                     {
                         note.Text += eventForShow.IsCanceledReason;
                     }
                     else
                     {
-                        note.Text += "None";
+                        note.Text += note.Text = Language.getControlText("bigPanelNone", this.Name);
                     }
                 }
                 else
                 {
                     if (eventForShow.IsHappened)
                     {
-                        note.Text = "Recall about happened event:\n";
+                        note.Text = Language.getControlText("bigPanelCanceledReason", this.Name) + "\r\n";
                         if (eventForShow.IsHappenedNote.Trim() != "")
                         {
                             note.Text += eventForShow.IsHappenedNote;
                         }
                         else
                         {
-                            note.Text += "None";
+                            note.Text += Language.getControlText("bigPanelNone", this.Name);
                         }
                     }
                 }
@@ -573,16 +577,26 @@ namespace CourseWork
 
         private void CanceledBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr_check_canceled = MessageBox.Show("Вы действительно хотите отметить событие как отмененное?", "Внимание!", MessageBoxButtons.YesNo);
+            DialogResult dr_check_canceled = MessageBox.Show(
+                Language.getControlText("setEventAsCanceledAttention", this.Name), 
+                Language.getControlText("attention", this.Name), 
+                MessageBoxButtons.YesNo);
             if (dr_check_canceled == DialogResult.Yes)
             {
                 _choosenIndexInEventListNow = Convert.ToInt32((sender as Button).Name) - 1;
                 _eventList[_choosenIndexInEventListNow].setEventIsCanceledTrue();
 
-                DialogResult dr_set_note = MessageBox.Show("Хотите указать причину отмены события?", "Внимание!", MessageBoxButtons.YesNo);
+                DialogResult dr_set_note = MessageBox.Show(
+                    Language.getControlText("setReasonOfCancel", this.Name), 
+                    Language.getControlText("attention", this.Name), 
+                    MessageBoxButtons.YesNo);
                 if (dr_set_note == DialogResult.Yes)
                 {
-                    NoteForm nf = new NoteForm("Event canceled reason", "Write reason, why event canceled", "Send", "Write feedback");
+                    NoteForm nf = new NoteForm(
+                        Language.getControlText("noteCANCReason", this.Name),
+                        Language.getControlText("noteCANCReasonDescr", this.Name),
+                        Language.getControlText("noteCANC_btn", this.Name),
+                        Language.getControlText("noteCANCReason_error", this.Name));
                     nf.ShowDialog();
                     if (nf.DialogResult == DialogResult.OK)
                     {
@@ -602,16 +616,26 @@ namespace CourseWork
 
         private void HappenedBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr_check_happened = MessageBox.Show("Вы действительно хотите отметить событие как прошедшее?", "Внимание!", MessageBoxButtons.YesNo);
+            DialogResult dr_check_happened = MessageBox.Show(
+                Language.getControlText("setEventAsHappenedAttention", this.Name),
+                Language.getControlText("attention", this.Name),
+                MessageBoxButtons.YesNo);
             if (dr_check_happened == DialogResult.Yes)
             {
                 _choosenIndexInEventListNow = Convert.ToInt32((sender as Button).Name) - 1;
                 _eventList[_choosenIndexInEventListNow].setEventIsHappenedTrue();
 
-                DialogResult dr_set_note = MessageBox.Show("Хотите ли оставить сообщение о мероприятии?", "Внимание!", MessageBoxButtons.YesNo);
+                DialogResult dr_set_note = MessageBox.Show(
+                Language.getControlText("setRecallAttention", this.Name),
+                Language.getControlText("attention", this.Name),
+                MessageBoxButtons.YesNo);
                 if (dr_set_note == DialogResult.Yes)
                 {
-                    NoteForm nf = new NoteForm("Note about event", "What do you think about happened event?", "Send", "Write feedback");
+                    NoteForm nf = new NoteForm(
+                        Language.getControlText("noteHAPPRecall", this.Name),
+                        Language.getControlText("noteHAPPRecallDescr", this.Name),
+                        Language.getControlText("noteHAPP_btn", this.Name),
+                        Language.getControlText("noteHAPPRecall_error", this.Name));
                     nf.ShowDialog();
                     if (nf.DialogResult == DialogResult.OK)
                     {
@@ -746,7 +770,7 @@ namespace CourseWork
         // Смена пользователя
         private void changeUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to change user?", "Attention!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show(Language.getControlText("changeUserAttention", this.Name), Language.getControlText("attention", this.Name), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Restart();
             }
@@ -806,7 +830,11 @@ namespace CourseWork
         {
             _showEvent = Filter.SearchName;
 
-            NoteForm nf = new NoteForm("Search from event name", "Write name event", "Find", "Write name for search");
+            NoteForm nf = new NoteForm(
+                Language.getControlText("noteSRCHName", this.Name),
+                Language.getControlText("noteSRCHNameDescr", this.Name),
+                Language.getControlText("noteSRCH_btn", this.Name),
+                Language.getControlText("noteSRCHName_error", this.Name));
             nf.ShowDialog();
             if (nf.DialogResult == DialogResult.OK)
             {
@@ -820,7 +848,11 @@ namespace CourseWork
         {
             _showEvent = Filter.SearchDate;
 
-            NoteForm nf = new NoteForm("Search from event date", "Write date event", "Find", "Write date for search");
+            NoteForm nf = new NoteForm(
+                Language.getControlText("noteSRCHDate", this.Name),
+                Language.getControlText("noteSRCHDateDescr", this.Name),
+                Language.getControlText("noteSRCH_btn", this.Name),
+                Language.getControlText("noteSRCHDate_error", this.Name));
             nf.ShowDialog();
             if (nf.DialogResult == DialogResult.OK)
             {
@@ -843,42 +875,6 @@ namespace CourseWork
                 i++;
             }
             return true;
-        }
-
-        // При запуске программы проверяем, есть ли у нас события, которые произошли, но еще не отмечены
-        private void CheckEndedEvents()
-        {
-            if (CompareDateNowAndDateOfEvents())
-            {
-                DialogResult dr = MessageBox.Show("У вас есть события, которые прошли, но не были отмечены. Вывести их на экран?", "Внимание!", MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes)
-                {
-                    _showEvent = Filter.Ended;
-                }
-                else if (dr == DialogResult.No)
-                {
-                    _showEvent = Filter.All;
-                }
-            }
-            else
-            {
-                _showEvent = Filter.All;
-            }
-        }
-
-        // Ищем события, которые еще не отмечены, но уже совершились
-        private bool CompareDateNowAndDateOfEvents()
-        {
-            for (int i = 0; i < _eventList.Count; i++)
-            {
-                if (_eventList[i].Date < DateTime.Now && 
-                    !_eventList[i].IsHappened && 
-                    !_eventList[i].IsCanceled)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         #endregion
@@ -927,7 +923,7 @@ namespace CourseWork
                 if (CheckTime(_eventList[i]))
                 {
                     _indexCheckingEventNow = i;
-                    Notification(_eventList[i].Name, "Внимание! Это событие наступит в " + _eventList[i].Date, ToolTipIcon.Warning);
+                    Notification(_eventList[i].Name, Language.getControlText("notificationAlert", this.Name) + " " + _eventList[i].Date, ToolTipIcon.Warning);
                     break;
                 }
             }
@@ -990,6 +986,45 @@ namespace CourseWork
 
         #region --- Уведомления о том, что прошли некоторые события ---
 
+        // При запуске программы проверяем, есть ли у нас события, которые произошли, но еще не отмечены
+        private void CheckEndedEvents()
+        {
+            if (CompareDateNowAndDateOfEvents())
+            {
+                DialogResult dr = MessageBox.Show(
+                Language.getControlText("uncheckedEventsAttention", this.Name),
+                Language.getControlText("attention", this.Name),
+                MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.Yes)
+                {
+                    _showEvent = Filter.Ended;
+                }
+                else if (dr == DialogResult.No)
+                {
+                    _showEvent = Filter.All;
+                }
+            }
+            else
+            {
+                _showEvent = Filter.All;
+            }
+        }
+
+        // Ищем события, которые еще не отмечены, но уже совершились
+        private bool CompareDateNowAndDateOfEvents()
+        {
+            for (int i = 0; i < _eventList.Count; i++)
+            {
+                if (_eventList[i].Date < DateTime.Now &&
+                    !_eventList[i].IsHappened &&
+                    !_eventList[i].IsCanceled)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
         #endregion

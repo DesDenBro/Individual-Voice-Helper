@@ -21,10 +21,13 @@ namespace CourseWork
         {
             InitializeComponent();
 
-            _date = new Clock("Date", 10, eventName_tb.Bottom + 10);
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+
+            _date = new Clock(Language.getControlText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
             this.Controls.Add(_date.ClockPanel);
 
-            _notification = new Clock("Notification", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            _notification = new Clock(Language.getControlText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
             this.Controls.Add(_notification.ClockPanel);
 
             voiceChecker.Start();
@@ -96,10 +99,10 @@ namespace CourseWork
                 }
                 else
                 {
-                    MessageBox.Show("Something wrote data incorrect!");
+                    MessageBox.Show(Language.getControlText("wroteDataIncorrect_error", this.Name));
                 }
             }
-            catch { MessageBox.Show("Something wrong. Try again"); }   
+            catch { MessageBox.Show(Language.getControlText("someMistake", this.Name)); }   
         }
 
         // Забрать готовое событие

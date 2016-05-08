@@ -30,7 +30,7 @@
         {
             this.send_btn = new System.Windows.Forms.Button();
             this.note_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.text_l = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // send_btn
@@ -39,7 +39,7 @@
             this.send_btn.Name = "send_btn";
             this.send_btn.Size = new System.Drawing.Size(361, 31);
             this.send_btn.TabIndex = 0;
-            this.send_btn.Text = "btn_name";
+            this.send_btn.Text = "send_btn";
             this.send_btn.UseVisualStyleBackColor = true;
             this.send_btn.Click += new System.EventHandler(this.send_btn_Click);
             // 
@@ -51,21 +51,21 @@
             this.note_tb.Size = new System.Drawing.Size(361, 95);
             this.note_tb.TabIndex = 1;
             // 
-            // label1
+            // text_l
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "text_name";
+            this.text_l.AutoSize = true;
+            this.text_l.Location = new System.Drawing.Point(12, 11);
+            this.text_l.Name = "text_l";
+            this.text_l.Size = new System.Drawing.Size(32, 13);
+            this.text_l.TabIndex = 2;
+            this.text_l.Text = "text_l";
             // 
             // NoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 174);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.text_l);
             this.Controls.Add(this.note_tb);
             this.Controls.Add(this.send_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -81,6 +81,6 @@
 
         private System.Windows.Forms.Button send_btn;
         private System.Windows.Forms.TextBox note_tb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label text_l;
     }
 }

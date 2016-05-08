@@ -1,0 +1,155 @@
+﻿AuthorizationForm | 1
+SignUpForm | 2
+MainForm | 3
+AddEventForm | 4
+ControlBookmarksForm | 5
+ControlProgramsForm | 6
+EditEventForm | 7
+SettingsForm | 8
+Clock | 9
+*
+welcome_l = Welcome!
+login_l = Login:
+password_l = Password:
+logIn_btn = Log in
+or_l = or
+signUp_btn = Sign up
+auth_error = Incorrect login or password
+*
+user_gb = User
+login_l = Login:
+password_l = Password:
+confPassword_l = Confirm password:
+AI_gb = Voice helper
+createAIChoose_cb = Create AI for this user
+helperNames_l = Helper names
+maleGenderChoose_rb = Male
+femaleSexChoose_rb = Female
+addName_btn = Add name
+deleteName_btn = Delete name
+create_btn = Create
+equPasswords_error = Passwords is not equ. Try again.
+LogOrPassIsEmpty_error = Login or password must have one or more simbols
+AIProperties_error = Something didn't choose/add in voice helper form, try again
+noteAIName = Add voice name
+noteAINameDescr = Write a new voice helper name
+noteAI_btn = Add
+noteAIAttention = Write name
+AINameLength_error = Name can't be more then 20 simbols!
+attention = Attention!
+AINamesCount_error = Names can't be more then 10!
+AINameDoesntChooseForDelete_error = You must choose element from list before delete it!
+*
+programToolStripMenuItem = Program
+changeUserToolStripMenuItem = Change user
+exitToolStripMenuItem = Exit
+addEventToolStripMenuItem = Add event
+filterToolStripMenuItem = Filters
+allEventsToolStripMenuItem = All events
+inProcessToolStripMenuItem = In progress
+onlyHappenedToolStripMenuItem = Only happened
+onlyCanceledToolStripMenuItem = Only canceled
+searchToolStripMenuItem = Search
+nameToolStripMenuItem = Name
+dateToolStripMenuItem = Date
+settingsToolStripMenuItem = Settings
+smallPanelHappened_btn = H
+smallPanelCanceled_btn = C
+smallPanelDate = Date:
+smallPanelTime = Time:
+smallPanelEdit_btn = Edit event
+smallPanelCanceledReason = Reason of event canceled:
+smallPanelHappenedRecall = Recall about happened event:
+smallPanelNone = None
+bigPanelDate = Event at:
+bigPanelNotification = Notification at:
+bigPanelEdit_btn = Edit event 
+bigPanelEventHappened_btn = Happened
+bigPanelEventCanceled_btn = Canceled
+bigPanelCanceledReason = Reason of event canceled:
+bigPanelHappenedRecall = Recall about happened event:
+bigPanelNone = None
+setEventAsCanceledAttention = Do you realy want to note this event as canceled?
+setReasonOfCancel = Do you want to note the canceled reason?
+noteCANCReason = Event canceled reason
+noteCANCReasonDescr = Write reason, why event canceled
+noteCANC_btn = Send
+noteCANCReason_error = Write reason!
+setEventAsHappenedAttention = Do you realy want to note this event as happened?
+setRecallAttention = Do you want to note about this event?
+noteHAPPRecall = Note about event
+noteHAPPRecallDescr = What do you think about happened event?
+noteHAPP_btn = Send
+noteHAPPRecall_error = Write feedback!
+changeUserAttention = Do you really want to change user?
+noteSRCHName = Search from event name
+noteSRCHNameDescr = Write name event
+noteSRCHName_error = Write name for search!
+noteSRCHDate = Search from event date
+noteSRCHDateDescr = Write date event
+noteSRCHDate_error = Write date for search!
+noteSRCH_btn = Find
+uncheckedEventsAttention = You have events that gone but doesn`t checked. Show them?
+notificationAlert = Attention! This event will be happen at 
+attention = Attention!
+*
+eventName_l = Event name
+eventText_l = Event text
+createEvent_btn = Add event
+blockNameDate = Date
+blockNameNotification = Notification
+wroteDataIncorrect_error = Something wrote data incorrect!
+someMistake = Something wrong. Try again.
+*
+crud_gb = Add, edit and delete bookmarks
+add_btn = Add
+edit_btn = Edit
+delete_btn = Delete
+import_gb = Import from browser
+browserChoise_l = Choose your browser
+importBM_btn = Import
+noteBMName = Name of a new bookmark
+noteBMNameDescr = Write name of a new bookmark
+noteBMLink = Link of a new bookmark
+noteBMLinkDescr = Write link of a new bookmark
+noteBMNameAttention = Write a bookmark name
+noteBMLinkAttention = Write a bookmark link
+noteBM_btn = Add a new bookmark
+noteBMLinkFirstPart = https://
+deleteBMAttention = Do you really want to delete this bookmark?
+programCloseAttention = Do you want to save your changes?
+countOfAddedBM = New bokmarks added:
+attention = Attention!
+*
+add_btn = Add
+testProgram_btn = Test start
+delete_btn = Delete
+filterFiles = Files
+filterLinks = Links
+notePRName = New program name
+notePRNameDiscr = Write program name
+notePR_btn = Add
+notePRNameAttention = Write name!
+deletePRAttention = Do you really want to delete this bookmark?
+programCloseAttention = Do you want to save your changes?
+attention = Attention!
+*
+eventName_l = Event name
+eventText_l = Event text
+editEvent_btn = Confirm event
+blockNameDate = Date
+blockNameNotification = Notification
+wroteDataIncorrect_error = Something wrote data incorrect!
+*
+language_l = Choouse language
+controlBM_btn = Control bookmarks
+controlPrograms_btn = Control programs
+showCommands_btn = Show voice commands
+Common_panTag = Common
+Profile_panTag = Profile
+VoiceHelper_panTag = Voice helper
+changeLanguageAttention = Do you really want to change language. It need in program restart. Continue?
+attention = Attention!
+*
+hours = Hours:
+minutes = Minutes:

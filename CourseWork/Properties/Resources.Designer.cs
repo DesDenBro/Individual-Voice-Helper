@@ -22,7 +22,7 @@ namespace CourseWork.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CourseWork.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CourseWork.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace CourseWork.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap canceled {
+        public static System.Drawing.Bitmap canceled {
             get {
                 object obj = ResourceManager.GetObject("canceled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,19 +73,36 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized string similar to AllFroms | open commands : 1 / open %bookmark_name% : 2 / open %program_name% : 3
         ///MainForm | create a new event : 1 / create event : 2
-        ///AddEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6
-        ///EditEventFrom | set event name : 1 / set event text : 2 / set event time : 3 /  set notify time : 4 / set event date : 5 / set event notify date : 6.
+        ///AddEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notification time : 4 / set event date : 5 / set notification date : 6
+        ///EditEventForm | set event name : 1 / set event text : 2 / set event time : 3 /  set notification time : 4 / set event date : 5 / set notification date : 6.
         /// </summary>
-        internal static string Commands {
+        public static string Commands {
             get {
                 return ResourceManager.GetString("Commands", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AuthorizationForm | 1
+        ///:::
+        ///AuthorizationForm = Authorization
+        ///AuthorizationForm.welcome_l = Welcome!
+        ///AuthorizationForm.login_l = Login:
+        ///AuthorizationForm.password_l = Password:
+        ///AuthorizationForm.logIn_btn = Log in
+        ///AuthorizationForm.or_l = or
+        ///AuthorizationForm.singUp_btn = Sign up.
+        /// </summary>
+        public static string eng {
+            get {
+                return ResourceManager.GetString("eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap happened {
+        public static System.Drawing.Bitmap happened {
             get {
                 object obj = ResourceManager.GetObject("happened", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -95,7 +112,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Icon {
+        public static System.Drawing.Icon Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -105,7 +122,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap in_process {
+        public static System.Drawing.Bitmap in_process {
             get {
                 object obj = ResourceManager.GetObject("in_process", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -115,7 +132,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap moon {
+        public static System.Drawing.Bitmap moon {
             get {
                 object obj = ResourceManager.GetObject("moon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -125,7 +142,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap moon_light {
+        public static System.Drawing.Bitmap moon_light {
             get {
                 object obj = ResourceManager.GetObject("moon_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,9 +150,18 @@ namespace CourseWork.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ru {
+            get {
+                return ResourceManager.GetString("ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
+        public static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -145,7 +171,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sun {
+        public static System.Drawing.Bitmap sun {
             get {
                 object obj = ResourceManager.GetObject("sun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -155,7 +181,7 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sun_light {
+        public static System.Drawing.Bitmap sun_light {
             get {
                 object obj = ResourceManager.GetObject("sun_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

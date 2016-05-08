@@ -27,15 +27,19 @@ namespace CourseWork
         public EditEventForm(Event eventForEdit)
         {
             InitializeComponent();
+
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+
             _tempEvent = eventForEdit;
             eventName_tb.Text = eventForEdit.Name;
             eventText_tb.Text = eventForEdit.Text;
 
-            _date = new Clock("Date", 10, eventName_tb.Bottom + 10);
+            _date = new Clock(Language.getControlText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
             _date.setTime(eventForEdit.Date);
             this.Controls.Add(_date.ClockPanel);
 
-            _notification = new Clock("Notification", _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            _notification = new Clock(Language.getControlText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
             _notification.setTime(eventForEdit.NotificationDateTime);
             this.Controls.Add(_notification.ClockPanel);
 
@@ -64,7 +68,7 @@ namespace CourseWork
             }
             else
             {
-                MessageBox.Show("Some data incorrect!");
+                MessageBox.Show(Language.getControlText("wroteDataIncorrect_error", this.Name));
             }
         }
 

@@ -26,6 +26,9 @@ namespace CourseWork
         {
             InitializeComponent();
 
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+
             _bookmarks = VoiceAnalizer.getVoiceAnalizer().Bookmarks;
 
             for (int i = 0; i < _bookmarks.Count; i++)
@@ -36,12 +39,23 @@ namespace CourseWork
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            NoteForm nfname = new NoteForm("Name of new bookmark", "Write name of new bookmark", "Add", "Write bookmark name");
+            NoteForm nfname = new NoteForm(
+                Language.getControlText("noteBMName", this.Name), 
+                Language.getControlText("noteBMNameDescr", this.Name), 
+                Language.getControlText("noteBM_btn", this.Name),
+                Language.getControlText("noteBMNameAttention", this.Name));
             nfname.ShowDialog();
+
             if (nfname.DialogResult == DialogResult.OK)
             {
-                NoteForm nflink = new NoteForm("Link of new bookmark", "Write link of new bookmark", "Add", "Write bookmark link", "https://");
+                NoteForm nflink = new NoteForm(
+                    Language.getControlText("noteBMLink", this.Name), 
+                    Language.getControlText("noteBMLinkDescr", this.Name),
+                    Language.getControlText("noteBM_btn", this.Name),
+                    Language.getControlText("noteBMLinkAttention", this.Name),
+                    Language.getControlText("noteBMLinkFirstPart", this.Name));
                 nflink.ShowDialog();
+
                 if (nflink.DialogResult == DialogResult.OK)
                 {
                     _bookmarks.Add(new Bookmark(nfname.Note, string.Format("{0}{1}{2}", '"', nflink.Note, '"')));
@@ -56,8 +70,14 @@ namespace CourseWork
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
-            NoteForm nflink = new NoteForm("Link of bookmark", "Write link of new bookmark", "Add", "Write bookmark link", _bookmarks[bookmarks_cb.SelectedIndex].Link);
+            NoteForm nflink = new NoteForm(
+                    Language.getControlText("noteBMLink", this.Name),
+                    Language.getControlText("noteBMLinkDescr", this.Name),
+                    Language.getControlText("noteBM_btn", this.Name),
+                    Language.getControlText("noteBMLinkAttention", this.Name), 
+                    _bookmarks[bookmarks_cb.SelectedIndex].Link);
             nflink.ShowDialog();
+
             if (nflink.DialogResult == DialogResult.OK)
             {
                 _bookmarks[bookmarks_cb.SelectedIndex].Link = nflink.Note;
@@ -69,7 +89,11 @@ namespace CourseWork
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you really want to delete this bookmark?", "Attention!", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show(
+                Language.getControlText("deleteBMAttention", this.Name),
+                Language.getControlText("attention", this.Name), 
+                MessageBoxButtons.YesNo);
+
             if (dr == DialogResult.Yes)
             {
                 _bookmarksForDeleteFromDB.Add(_bookmarks[bookmarks_cb.SelectedIndex]);
@@ -91,7 +115,10 @@ namespace CourseWork
         {
             if (_smthChanged)
             {
-                DialogResult dr = MessageBox.Show("Do you want to save your changes?", "Attention!", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show(
+                Language.getControlText("programCloseAttention", this.Name),
+                Language.getControlText("attention", this.Name),
+                MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)
                 {
@@ -141,7 +168,9 @@ namespace CourseWork
 
             if (_smthChanged) bookmarks_cb.SelectedIndex = 0;
 
-            MessageBox.Show(string.Format("New bokmarks added: {0}", newBMAdded), "Attention!");
+            MessageBox.Show(
+                string.Format(Language.getControlText("countOfAddedBM", this.Name) + " {0}", newBMAdded), 
+                Language.getControlText("attention", this.Name));
         }
     }
 }

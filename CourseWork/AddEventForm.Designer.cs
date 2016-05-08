@@ -33,7 +33,7 @@
             this.createEvent_btn = new System.Windows.Forms.Button();
             this.eventText_l = new System.Windows.Forms.Label();
             this.eventName_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.eventName_l = new System.Windows.Forms.Label();
             this.voiceChecker = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.voiceCommand_ss = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,7 +54,7 @@
             this.createEvent_btn.Name = "createEvent_btn";
             this.createEvent_btn.Size = new System.Drawing.Size(353, 51);
             this.createEvent_btn.TabIndex = 1;
-            this.createEvent_btn.Text = "Add event";
+            this.createEvent_btn.Text = "createEvent_btn";
             this.createEvent_btn.UseVisualStyleBackColor = true;
             this.createEvent_btn.Click += new System.EventHandler(this.createEvent_btn_Click);
             // 
@@ -63,9 +63,9 @@
             this.eventText_l.AutoSize = true;
             this.eventText_l.Location = new System.Drawing.Point(9, 197);
             this.eventText_l.Name = "eventText_l";
-            this.eventText_l.Size = new System.Drawing.Size(55, 13);
+            this.eventText_l.Size = new System.Drawing.Size(63, 13);
             this.eventText_l.TabIndex = 3;
-            this.eventText_l.Text = "Event text";
+            this.eventText_l.Text = "eventText_l";
             // 
             // eventName_tb
             // 
@@ -74,14 +74,14 @@
             this.eventName_tb.Size = new System.Drawing.Size(285, 20);
             this.eventName_tb.TabIndex = 6;
             // 
-            // label1
+            // eventName_l
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Event name";
+            this.eventName_l.AutoSize = true;
+            this.eventName_l.Location = new System.Drawing.Point(9, 13);
+            this.eventName_l.Name = "eventName_l";
+            this.eventName_l.Size = new System.Drawing.Size(70, 13);
+            this.eventName_l.TabIndex = 7;
+            this.eventName_l.Text = "eventName_l";
             // 
             // voiceChecker
             // 
@@ -108,7 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 471);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.eventName_l);
             this.Controls.Add(this.eventName_tb);
             this.Controls.Add(this.eventText_l);
             this.Controls.Add(this.createEvent_btn);
@@ -130,7 +130,7 @@
         private System.Windows.Forms.Button createEvent_btn;
         private System.Windows.Forms.Label eventText_l;
         private System.Windows.Forms.TextBox eventName_tb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label eventName_l;
         private System.Windows.Forms.Timer voiceChecker;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel voiceCommand_ss;

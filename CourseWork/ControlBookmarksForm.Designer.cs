@@ -33,7 +33,7 @@
             this.delete_btn = new System.Windows.Forms.Button();
             this.bookmarks_cb = new System.Windows.Forms.ComboBox();
             this.link_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.browserChoise_l = new System.Windows.Forms.Label();
             this.browserChoice_cb = new System.Windows.Forms.ComboBox();
             this.importBM_btn = new System.Windows.Forms.Button();
             this.crud_gb = new System.Windows.Forms.GroupBox();
@@ -48,7 +48,7 @@
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(71, 36);
             this.add_btn.TabIndex = 0;
-            this.add_btn.Text = "Add";
+            this.add_btn.Text = "add_btn";
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
@@ -58,7 +58,7 @@
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(75, 36);
             this.edit_btn.TabIndex = 1;
-            this.edit_btn.Text = "Edit";
+            this.edit_btn.Text = "edit_btn";
             this.edit_btn.UseVisualStyleBackColor = true;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
@@ -68,7 +68,7 @@
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(75, 36);
             this.delete_btn.TabIndex = 2;
-            this.delete_btn.Text = "Delete";
+            this.delete_btn.Text = "delete_btn";
             this.delete_btn.UseVisualStyleBackColor = true;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
@@ -91,14 +91,14 @@
             this.link_tb.Size = new System.Drawing.Size(234, 20);
             this.link_tb.TabIndex = 4;
             // 
-            // label1
+            // browserChoise_l
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Choose your browser";
+            this.browserChoise_l.AutoSize = true;
+            this.browserChoise_l.Location = new System.Drawing.Point(6, 19);
+            this.browserChoise_l.Name = "browserChoise_l";
+            this.browserChoise_l.Size = new System.Drawing.Size(84, 13);
+            this.browserChoise_l.TabIndex = 7;
+            this.browserChoise_l.Text = "browserChoise_l";
             // 
             // browserChoice_cb
             // 
@@ -119,7 +119,7 @@
             this.importBM_btn.Name = "importBM_btn";
             this.importBM_btn.Size = new System.Drawing.Size(172, 36);
             this.importBM_btn.TabIndex = 5;
-            this.importBM_btn.Text = "Import";
+            this.importBM_btn.Text = "importBM_btn";
             this.importBM_btn.UseVisualStyleBackColor = true;
             this.importBM_btn.Click += new System.EventHandler(this.importBM_btn_Click);
             // 
@@ -135,19 +135,19 @@
             this.crud_gb.Size = new System.Drawing.Size(248, 117);
             this.crud_gb.TabIndex = 8;
             this.crud_gb.TabStop = false;
-            this.crud_gb.Text = "Add, edit and delete bookmarks";
+            this.crud_gb.Text = "crud_gb";
             // 
             // import_gb
             // 
             this.import_gb.Controls.Add(this.importBM_btn);
             this.import_gb.Controls.Add(this.browserChoice_cb);
-            this.import_gb.Controls.Add(this.label1);
+            this.import_gb.Controls.Add(this.browserChoise_l);
             this.import_gb.Location = new System.Drawing.Point(266, 12);
             this.import_gb.Name = "import_gb";
             this.import_gb.Size = new System.Drawing.Size(190, 117);
             this.import_gb.TabIndex = 9;
             this.import_gb.TabStop = false;
-            this.import_gb.Text = "Import from browser";
+            this.import_gb.Text = "import_gb";
             // 
             // ControlBookmarksForm
             // 
@@ -176,7 +176,7 @@
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.ComboBox bookmarks_cb;
         private System.Windows.Forms.TextBox link_tb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label browserChoise_l;
         private System.Windows.Forms.ComboBox browserChoice_cb;
         private System.Windows.Forms.Button importBM_btn;
         private System.Windows.Forms.GroupBox crud_gb;

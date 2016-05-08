@@ -78,6 +78,7 @@ namespace CourseWork
             _commandsPanel.Location = new Point(mainPanel.Width / 3 - 1, 0);
             _commandsPanel.Size = new Size(mainPanel.Width - mainPanel.Width / 3, mainPanel.Height - 30);
             _commandsPanel.BackColor = Color.White;
+            _commandsPanel.AutoScroll = true;
             if (_commands.ContainsKey(_activeFormName))
             {
                 _activePanelName = _activeFormName;

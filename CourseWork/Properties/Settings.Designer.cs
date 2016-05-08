@@ -34,14 +34,15 @@ namespace CourseWork.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MainDB.mdf;In" +
-            "tegrated Security=True")]
-        public string Database1ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("eng")]
+        public string Language {
             get {
-                return ((string)(this["Database1ConnectionString"]));
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
             }
         }
     }

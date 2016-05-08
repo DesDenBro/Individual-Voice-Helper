@@ -31,13 +31,16 @@ namespace CourseWork
         public SignUpForm(int numberOfUsers)
         {
             InitializeComponent();
+
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
         }
 
         // Кнопка для создания нового пользователя
         private void CreateBtn_Click(object sender, EventArgs e)
         {
             if (newPassword.Text != "" && newLogin.Text != "" && 
-                (!createAIChoose_cb.Checked || (createAIChoose_cb.Checked && (maleSexChoose_rb.Checked || femaleSexChoose_rb.Checked) && names_lb.Items.Count > 0)))
+                (!createAIChoose_cb.Checked || (createAIChoose_cb.Checked && (maleGenderChoose_rb.Checked || femaleSexChoose_rb.Checked) && names_lb.Items.Count > 0)))
             {
                 
                 if (newPassword.Text == newPasswordConfirm.Text)
@@ -47,14 +50,14 @@ namespace CourseWork
 
                     if (createAIChoose_cb.Checked)
                     {
-                        _AIForNewUser = new AI(Gateway.getCountOfTableRows("User"), getNames(), maleSexChoose_rb.Checked);
+                        _AIForNewUser = new AI(Gateway.getCountOfTableRows("User"), getNames(), maleGenderChoose_rb.Checked);
                     }
 
                     this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show("Passwords is not equ. Try again");
+                    MessageBox.Show(Language.getControlText("equPasswords_error", this.Name));
                     newPassword.Text = "";
                     newPasswordConfirm.Text = "";
                 }
@@ -62,9 +65,9 @@ namespace CourseWork
             else
             {
                 if (newPassword.Text == "" && newLogin.Text == "")
-                    MessageBox.Show("Login or password must have one or more simbols");
-                if (createAIChoose_cb.Checked && ((!maleSexChoose_rb.Checked && !femaleSexChoose_rb.Checked) || names_lb.Items.Count <= 0))
-                    MessageBox.Show("Something didn't choose/add in voice helper form, try again");
+                    MessageBox.Show(Language.getControlText("LogOrPassIsEmpty_error", this.Name));
+                if (createAIChoose_cb.Checked && ((!maleGenderChoose_rb.Checked && !femaleSexChoose_rb.Checked) || names_lb.Items.Count <= 0))
+                    MessageBox.Show(Language.getControlText("AIProperties_error", this.Name));
             }
         }
 
@@ -84,8 +87,8 @@ namespace CourseWork
         // Выбор создания (или нет), голосового помощника для пользователя
         private void createAIChoose_cb_CheckedChanged(object sender, EventArgs e)
         {
-            maleSexChoose_rb.Enabled = femaleSexChoose_rb.Enabled = createAIChoose_cb.Checked;
-            maleSexChoose_rb.Checked = femaleSexChoose_rb.Checked = false;
+            maleGenderChoose_rb.Enabled = femaleSexChoose_rb.Enabled = createAIChoose_cb.Checked;
+            maleGenderChoose_rb.Checked = femaleSexChoose_rb.Checked = false;
             names_lb.Items.Clear(); names_lb.Enabled = createAIChoose_cb.Checked;
             addName_btn.Enabled = deleteName_btn.Enabled = createAIChoose_cb.Checked;
         }
@@ -95,18 +98,29 @@ namespace CourseWork
         {
             if (names_lb.Items.Count < 10)
             {
-                NoteForm nf = new NoteForm("Add voice name", "Write a new voice helper name", "Add", "Write name");
+                NoteForm nf = new NoteForm(
+                    Language.getControlText("noteAIName", this.Name),
+                    Language.getControlText("noteAINameDescr", this.Name),
+                    Language.getControlText("noteAI_btn", this.Name),
+                    Language.getControlText("noteAIAttention", this.Name));
                 nf.ShowDialog();
+
                 if (nf.DialogResult == DialogResult.OK)
                 {
                     if (nf.Note.Length <= 20)
                         names_lb.Items.Add(TranslitWord.GetTranslit(nf.Note));
                     else
-                        MessageBox.Show("Name can't be more then 20 simbols!", "Attention!", MessageBoxButtons.OK);
+                        MessageBox.Show(
+                            Language.getControlText("AINameLength_error", this.Name),
+                            Language.getControlText("attention", this.Name), 
+                            MessageBoxButtons.OK);
                 }
             }
             else
-                MessageBox.Show("Names can't be more then 10!", "Attention!", MessageBoxButtons.OK);
+                MessageBox.Show(
+                        Language.getControlText("AINamesCount_error", this.Name),
+                        Language.getControlText("attention", this.Name),
+                        MessageBoxButtons.OK);
         }
 
         // Удаление имени
@@ -115,7 +129,10 @@ namespace CourseWork
             if (names_lb.SelectedIndex > 0)
                 names_lb.Items.RemoveAt(names_lb.SelectedIndex);
             else
-                MessageBox.Show("You must choose element from list before delete it!", "Attention!", MessageBoxButtons.OK);
+                MessageBox.Show(
+                    Language.getControlText("AINameDoesntChooseForDelete_error", this.Name),
+                    Language.getControlText("attention", this.Name),
+                    MessageBoxButtons.OK);
         }
 
         #endregion

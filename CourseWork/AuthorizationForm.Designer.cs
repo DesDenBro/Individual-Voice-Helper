@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.logIn = new System.Windows.Forms.Button();
+            this.logIn_btn = new System.Windows.Forms.Button();
             this.Password_tb = new System.Windows.Forms.TextBox();
             this.Login_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.signUp = new System.Windows.Forms.Button();
+            this.password_l = new System.Windows.Forms.Label();
+            this.login_l = new System.Windows.Forms.Label();
+            this.welcome_l = new System.Windows.Forms.Label();
+            this.or_l = new System.Windows.Forms.Label();
+            this.signUp_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // logIn
+            // logIn_btn
             // 
-            this.logIn.Location = new System.Drawing.Point(12, 152);
-            this.logIn.Name = "logIn";
-            this.logIn.Size = new System.Drawing.Size(176, 33);
-            this.logIn.TabIndex = 0;
-            this.logIn.Text = "Log in";
-            this.logIn.UseVisualStyleBackColor = true;
-            this.logIn.Click += new System.EventHandler(this.logIn_Click);
+            this.logIn_btn.Location = new System.Drawing.Point(12, 152);
+            this.logIn_btn.Name = "logIn_btn";
+            this.logIn_btn.Size = new System.Drawing.Size(176, 33);
+            this.logIn_btn.TabIndex = 0;
+            this.logIn_btn.Text = "logIn_btn";
+            this.logIn_btn.UseVisualStyleBackColor = true;
+            this.logIn_btn.Click += new System.EventHandler(this.logIn_Click);
             // 
             // Password_tb
             // 
@@ -64,71 +64,72 @@
             this.Login_tb.Size = new System.Drawing.Size(176, 20);
             this.Login_tb.TabIndex = 2;
             // 
-            // label1
+            // password_l
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Password";
+            this.password_l.AutoSize = true;
+            this.password_l.Location = new System.Drawing.Point(9, 106);
+            this.password_l.Name = "password_l";
+            this.password_l.Size = new System.Drawing.Size(60, 13);
+            this.password_l.TabIndex = 3;
+            this.password_l.Text = "password_l";
             // 
-            // label2
+            // login_l
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Login";
+            this.login_l.AutoSize = true;
+            this.login_l.Location = new System.Drawing.Point(9, 62);
+            this.login_l.Name = "login_l";
+            this.login_l.Size = new System.Drawing.Size(37, 13);
+            this.login_l.TabIndex = 4;
+            this.login_l.Text = "login_l";
             // 
-            // label3
+            // welcome_l
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(27, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 33);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "WELCOME!";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.welcome_l.AutoSize = true;
+            this.welcome_l.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.welcome_l.Location = new System.Drawing.Point(27, 18);
+            this.welcome_l.Name = "welcome_l";
+            this.welcome_l.Size = new System.Drawing.Size(140, 33);
+            this.welcome_l.TabIndex = 5;
+            this.welcome_l.Text = "welcome_l";
+            this.welcome_l.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // or_l
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(172, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(16, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "or";
+            this.or_l.AutoSize = true;
+            this.or_l.Location = new System.Drawing.Point(92, 191);
+            this.or_l.Name = "or_l";
+            this.or_l.Size = new System.Drawing.Size(24, 13);
+            this.or_l.TabIndex = 6;
+            this.or_l.Text = "or_l";
             // 
-            // signUp
+            // signUp_btn
             // 
-            this.signUp.Location = new System.Drawing.Point(127, 207);
-            this.signUp.Name = "signUp";
-            this.signUp.Size = new System.Drawing.Size(61, 31);
-            this.signUp.TabIndex = 7;
-            this.signUp.Text = "Sign up";
-            this.signUp.UseVisualStyleBackColor = true;
-            this.signUp.Click += new System.EventHandler(this.signUp_Click);
+            this.signUp_btn.Location = new System.Drawing.Point(12, 207);
+            this.signUp_btn.Name = "signUp_btn";
+            this.signUp_btn.Size = new System.Drawing.Size(176, 31);
+            this.signUp_btn.TabIndex = 7;
+            this.signUp_btn.Text = "signUp_btn";
+            this.signUp_btn.UseVisualStyleBackColor = true;
+            this.signUp_btn.Click += new System.EventHandler(this.signUp_Click);
             // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(200, 250);
-            this.Controls.Add(this.signUp);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.signUp_btn);
+            this.Controls.Add(this.or_l);
+            this.Controls.Add(this.welcome_l);
+            this.Controls.Add(this.login_l);
+            this.Controls.Add(this.password_l);
             this.Controls.Add(this.Login_tb);
             this.Controls.Add(this.Password_tb);
-            this.Controls.Add(this.logIn);
+            this.Controls.Add(this.logIn_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AuthorizationForm";
-            this.Text = "Authorization";
+            this.Text = "AuthorizationForm";
+            this.Load += new System.EventHandler(this.AuthorizationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,13 +137,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button logIn;
+        private System.Windows.Forms.Button logIn_btn;
         private System.Windows.Forms.TextBox Password_tb;
         private System.Windows.Forms.TextBox Login_tb;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button signUp;
+        private System.Windows.Forms.Label password_l;
+        private System.Windows.Forms.Label login_l;
+        private System.Windows.Forms.Label welcome_l;
+        private System.Windows.Forms.Label or_l;
+        private System.Windows.Forms.Button signUp_btn;
     }
 }

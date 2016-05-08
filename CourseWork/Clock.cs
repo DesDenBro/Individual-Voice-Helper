@@ -72,7 +72,7 @@ namespace CourseWork
             _timeInString = new Label();
             _timeInString.Left = _pictureBoxForClock.Right;
             _timeInString.Top = _pictureBoxForClock.Top + 5;
-            _timeInString.Text = "Hours:\r\n0 \r\nMinutes: \r\n0";
+            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n0 \r\n" + Language.getControlText("minutes", "Clock") + "\r\n0";
             _timeInString.Height = _pictureBoxForClock.Height / 2;
             _panel.Controls.Add(_timeInString);
 
@@ -141,7 +141,7 @@ namespace CourseWork
 
             _minute = dateTime.Minute;
 
-            _timeInString.Text = "Hours:\r\n" + _hour.ToString() + "\r\nMinutes: \r\n" + _minute.ToString();
+            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getControlText("minutes", "Clock") + "\r\n" + _minute.ToString();
 
             _pictureBoxForClock.Refresh();
         }
@@ -172,7 +172,7 @@ namespace CourseWork
                     break;
             }
 
-            _timeInString.Text = "Hours:\r\n" + _hour.ToString() + "\r\nMinutes: \r\n" + _minute.ToString();
+            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getControlText("minutes", "Clock") + "\r\n" + _minute.ToString();
 
             _pictureBoxForClock.Refresh();
         }

@@ -28,7 +28,7 @@ namespace CourseWork
             InitializeComponent();
 
             this.Text = formName;
-            label1.Text = needInfo;
+            text_l.Text = needInfo;
             send_btn.Text = btnName;
             _emptyFieldErrorText = emptyFieldErrorText;
         }
@@ -38,7 +38,7 @@ namespace CourseWork
             InitializeComponent();
 
             this.Text = formName;
-            label1.Text = needInfo;
+            text_l.Text = needInfo;
             send_btn.Text = btnName;
             _emptyFieldErrorText = emptyFieldErrorText;
             note_tb.Text = wroteTextInTextbox;

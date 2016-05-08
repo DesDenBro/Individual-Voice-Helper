@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace CourseWork
@@ -16,6 +18,12 @@ namespace CourseWork
 
 
         #region --- Загрузка формы и первичная обработка ---
+
+        private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+        }
 
         public AuthorizationForm()
         {
@@ -35,12 +43,11 @@ namespace CourseWork
         private void checkLogin()
         {
             bool access = false;
-
             Gateway.checkUser(ref access, ref _userID, Login_tb.Text, Password_tb.Text);
 
             if (!access)
             {
-                MessageBox.Show("Incorrect login or password");
+                MessageBox.Show(Language.getControlText("auth_error", this.Name));
             }
             else
             {

@@ -46,7 +46,7 @@
             this.editEvent_btn.Name = "editEvent_btn";
             this.editEvent_btn.Size = new System.Drawing.Size(351, 38);
             this.editEvent_btn.TabIndex = 1;
-            this.editEvent_btn.Text = "Confirm edit";
+            this.editEvent_btn.Text = "editEvent_btn";
             this.editEvent_btn.UseVisualStyleBackColor = true;
             this.editEvent_btn.Click += new System.EventHandler(this.editEvent_btn_Click);
             // 
@@ -55,18 +55,18 @@
             this.eventText_l.AutoSize = true;
             this.eventText_l.Location = new System.Drawing.Point(12, 218);
             this.eventText_l.Name = "eventText_l";
-            this.eventText_l.Size = new System.Drawing.Size(55, 13);
+            this.eventText_l.Size = new System.Drawing.Size(63, 13);
             this.eventText_l.TabIndex = 3;
-            this.eventText_l.Text = "Event text";
+            this.eventText_l.Text = "eventText_l";
             // 
             // eventName_l
             // 
             this.eventName_l.AutoSize = true;
             this.eventName_l.Location = new System.Drawing.Point(12, 9);
             this.eventName_l.Name = "eventName_l";
-            this.eventName_l.Size = new System.Drawing.Size(64, 13);
+            this.eventName_l.Size = new System.Drawing.Size(70, 13);
             this.eventName_l.TabIndex = 4;
-            this.eventName_l.Text = "Event name";
+            this.eventName_l.Text = "eventName_l";
             // 
             // eventName_tb
             // 

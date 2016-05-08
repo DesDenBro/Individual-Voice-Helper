@@ -19,12 +19,21 @@ namespace CourseWork
 
         #endregion
 
+
         #region --- Загрузка формы ---
 
         public SettingsForm()
         {
             InitializeComponent();
+
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+
             _allPanels = new Panel[] { Common_pan, Profile_pan, VoiceHelper_pan };
+
+            Common_pan.Tag = Language.getControlText("Common_panTag", this.Name);
+            Profile_pan.Tag = Language.getControlText("Profile_panTag", this.Name);
+            VoiceHelper_pan.Tag = Language.getControlText("VoiceHelper_panTag", this.Name);
 
             this.Size = new Size(577, 336);
 
@@ -84,5 +93,20 @@ namespace CourseWork
         }
 
         #endregion
+
+        private void languages_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Language.getControlText("changeLanguageAttention", this.Name), Language.getControlText("attention", this.Name), MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                switch (languages_cb.SelectedItem.ToString())
+                {
+                    case "English": CourseWork.Properties.Settings.Default.Language = "eng"; break;
+                    case "Русский": CourseWork.Properties.Settings.Default.Language = "rus"; break;
+                }
+
+                CourseWork.Properties.Settings.Default.Save();
+                Application.Restart();
+            }
+        }
     }
 }

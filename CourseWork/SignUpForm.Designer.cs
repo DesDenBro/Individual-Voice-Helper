@@ -28,53 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CreateBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.create_btn = new System.Windows.Forms.Button();
+            this.login_l = new System.Windows.Forms.Label();
+            this.password_l = new System.Windows.Forms.Label();
             this.newLogin = new System.Windows.Forms.TextBox();
             this.newPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.confPassword_l = new System.Windows.Forms.Label();
             this.newPasswordConfirm = new System.Windows.Forms.TextBox();
             this.user_gb = new System.Windows.Forms.GroupBox();
             this.AI_gb = new System.Windows.Forms.GroupBox();
             this.deleteName_btn = new System.Windows.Forms.Button();
             this.addName_btn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.helperNames_l = new System.Windows.Forms.Label();
             this.names_lb = new System.Windows.Forms.ListBox();
             this.femaleSexChoose_rb = new System.Windows.Forms.RadioButton();
-            this.maleSexChoose_rb = new System.Windows.Forms.RadioButton();
+            this.maleGenderChoose_rb = new System.Windows.Forms.RadioButton();
             this.createAIChoose_cb = new System.Windows.Forms.CheckBox();
             this.user_gb.SuspendLayout();
             this.AI_gb.SuspendLayout();
             this.SuspendLayout();
             // 
-            // CreateBtn
+            // create_btn
             // 
-            this.CreateBtn.Location = new System.Drawing.Point(12, 179);
-            this.CreateBtn.Name = "CreateBtn";
-            this.CreateBtn.Size = new System.Drawing.Size(157, 28);
-            this.CreateBtn.TabIndex = 0;
-            this.CreateBtn.Text = "Create";
-            this.CreateBtn.UseVisualStyleBackColor = true;
-            this.CreateBtn.Click += new System.EventHandler(this.CreateBtn_Click);
+            this.create_btn.Location = new System.Drawing.Point(12, 179);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Size = new System.Drawing.Size(157, 28);
+            this.create_btn.TabIndex = 0;
+            this.create_btn.Text = "Create_btn";
+            this.create_btn.UseVisualStyleBackColor = true;
+            this.create_btn.Click += new System.EventHandler(this.CreateBtn_Click);
             // 
-            // label1
+            // login_l
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
+            this.login_l.AutoSize = true;
+            this.login_l.Location = new System.Drawing.Point(14, 23);
+            this.login_l.Name = "login_l";
+            this.login_l.Size = new System.Drawing.Size(37, 13);
+            this.login_l.TabIndex = 1;
+            this.login_l.Text = "login_l";
             // 
-            // label2
+            // password_l
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password";
+            this.password_l.AutoSize = true;
+            this.password_l.Location = new System.Drawing.Point(14, 65);
+            this.password_l.Name = "password_l";
+            this.password_l.Size = new System.Drawing.Size(53, 13);
+            this.password_l.TabIndex = 2;
+            this.password_l.Text = "Password";
             // 
             // newLogin
             // 
@@ -91,14 +91,14 @@
             this.newPassword.TabIndex = 4;
             this.newPassword.UseSystemPasswordChar = true;
             // 
-            // label3
+            // confPassword_l
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Confirm password";
+            this.confPassword_l.AutoSize = true;
+            this.confPassword_l.Location = new System.Drawing.Point(14, 109);
+            this.confPassword_l.Name = "confPassword_l";
+            this.confPassword_l.Size = new System.Drawing.Size(82, 13);
+            this.confPassword_l.TabIndex = 5;
+            this.confPassword_l.Text = "confPassword_l";
             // 
             // newPasswordConfirm
             // 
@@ -110,34 +110,34 @@
             // 
             // user_gb
             // 
-            this.user_gb.Controls.Add(this.label1);
+            this.user_gb.Controls.Add(this.login_l);
             this.user_gb.Controls.Add(this.newLogin);
-            this.user_gb.Controls.Add(this.label2);
+            this.user_gb.Controls.Add(this.password_l);
             this.user_gb.Controls.Add(this.newPasswordConfirm);
             this.user_gb.Controls.Add(this.newPassword);
-            this.user_gb.Controls.Add(this.label3);
+            this.user_gb.Controls.Add(this.confPassword_l);
             this.user_gb.Location = new System.Drawing.Point(12, 12);
             this.user_gb.Name = "user_gb";
             this.user_gb.Size = new System.Drawing.Size(157, 161);
             this.user_gb.TabIndex = 7;
             this.user_gb.TabStop = false;
-            this.user_gb.Text = "User";
+            this.user_gb.Text = "user_gb";
             // 
             // AI_gb
             // 
             this.AI_gb.Controls.Add(this.deleteName_btn);
             this.AI_gb.Controls.Add(this.addName_btn);
-            this.AI_gb.Controls.Add(this.label4);
+            this.AI_gb.Controls.Add(this.helperNames_l);
             this.AI_gb.Controls.Add(this.names_lb);
             this.AI_gb.Controls.Add(this.femaleSexChoose_rb);
-            this.AI_gb.Controls.Add(this.maleSexChoose_rb);
+            this.AI_gb.Controls.Add(this.maleGenderChoose_rb);
             this.AI_gb.Controls.Add(this.createAIChoose_cb);
             this.AI_gb.Location = new System.Drawing.Point(176, 12);
             this.AI_gb.Name = "AI_gb";
             this.AI_gb.Size = new System.Drawing.Size(229, 195);
             this.AI_gb.TabIndex = 8;
             this.AI_gb.TabStop = false;
-            this.AI_gb.Text = "Voice helper";
+            this.AI_gb.Text = "AI_gb";
             // 
             // deleteName_btn
             // 
@@ -145,7 +145,7 @@
             this.deleteName_btn.Name = "deleteName_btn";
             this.deleteName_btn.Size = new System.Drawing.Size(59, 44);
             this.deleteName_btn.TabIndex = 12;
-            this.deleteName_btn.Text = "Delete name";
+            this.deleteName_btn.Text = "deleteName_btn";
             this.deleteName_btn.UseVisualStyleBackColor = true;
             this.deleteName_btn.Click += new System.EventHandler(this.deleteName_btn_Click);
             // 
@@ -155,18 +155,18 @@
             this.addName_btn.Name = "addName_btn";
             this.addName_btn.Size = new System.Drawing.Size(59, 44);
             this.addName_btn.TabIndex = 11;
-            this.addName_btn.Text = "Add name";
+            this.addName_btn.Text = "addName_btn";
             this.addName_btn.UseVisualStyleBackColor = true;
             this.addName_btn.Click += new System.EventHandler(this.addName_btn_Click);
             // 
-            // label4
+            // helperNames_l
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Helper names";
+            this.helperNames_l.AutoSize = true;
+            this.helperNames_l.Location = new System.Drawing.Point(6, 38);
+            this.helperNames_l.Name = "helperNames_l";
+            this.helperNames_l.Size = new System.Drawing.Size(77, 13);
+            this.helperNames_l.TabIndex = 10;
+            this.helperNames_l.Text = "helperNames_l";
             // 
             // names_lb
             // 
@@ -181,23 +181,23 @@
             this.femaleSexChoose_rb.AutoSize = true;
             this.femaleSexChoose_rb.Location = new System.Drawing.Point(164, 78);
             this.femaleSexChoose_rb.Name = "femaleSexChoose_rb";
-            this.femaleSexChoose_rb.Size = new System.Drawing.Size(59, 17);
+            this.femaleSexChoose_rb.Size = new System.Drawing.Size(125, 17);
             this.femaleSexChoose_rb.TabIndex = 8;
             this.femaleSexChoose_rb.TabStop = true;
-            this.femaleSexChoose_rb.Text = "Female";
+            this.femaleSexChoose_rb.Text = "femaleSexChoose_rb";
             this.femaleSexChoose_rb.UseVisualStyleBackColor = true;
             // 
-            // maleSexChoose_rb
+            // maleGenderChoose_rb
             // 
-            this.maleSexChoose_rb.AutoSize = true;
-            this.maleSexChoose_rb.Checked = true;
-            this.maleSexChoose_rb.Location = new System.Drawing.Point(164, 55);
-            this.maleSexChoose_rb.Name = "maleSexChoose_rb";
-            this.maleSexChoose_rb.Size = new System.Drawing.Size(48, 17);
-            this.maleSexChoose_rb.TabIndex = 7;
-            this.maleSexChoose_rb.TabStop = true;
-            this.maleSexChoose_rb.Text = "Male";
-            this.maleSexChoose_rb.UseVisualStyleBackColor = true;
+            this.maleGenderChoose_rb.AutoSize = true;
+            this.maleGenderChoose_rb.Checked = true;
+            this.maleGenderChoose_rb.Location = new System.Drawing.Point(164, 55);
+            this.maleGenderChoose_rb.Name = "maleGenderChoose_rb";
+            this.maleGenderChoose_rb.Size = new System.Drawing.Size(133, 17);
+            this.maleGenderChoose_rb.TabIndex = 7;
+            this.maleGenderChoose_rb.TabStop = true;
+            this.maleGenderChoose_rb.Text = "maleGenderChoose_rb";
+            this.maleGenderChoose_rb.UseVisualStyleBackColor = true;
             // 
             // createAIChoose_cb
             // 
@@ -206,9 +206,9 @@
             this.createAIChoose_cb.CheckState = System.Windows.Forms.CheckState.Checked;
             this.createAIChoose_cb.Location = new System.Drawing.Point(9, 19);
             this.createAIChoose_cb.Name = "createAIChoose_cb";
-            this.createAIChoose_cb.Size = new System.Drawing.Size(127, 17);
+            this.createAIChoose_cb.Size = new System.Drawing.Size(120, 17);
             this.createAIChoose_cb.TabIndex = 0;
-            this.createAIChoose_cb.Text = "Create AI for this user";
+            this.createAIChoose_cb.Text = "createAIChoose_cb";
             this.createAIChoose_cb.UseVisualStyleBackColor = true;
             this.createAIChoose_cb.CheckedChanged += new System.EventHandler(this.createAIChoose_cb_CheckedChanged);
             // 
@@ -219,7 +219,7 @@
             this.ClientSize = new System.Drawing.Size(417, 216);
             this.Controls.Add(this.AI_gb);
             this.Controls.Add(this.user_gb);
-            this.Controls.Add(this.CreateBtn);
+            this.Controls.Add(this.create_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SignUpForm";
@@ -234,21 +234,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button CreateBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button create_btn;
+        private System.Windows.Forms.Label login_l;
+        private System.Windows.Forms.Label password_l;
         private System.Windows.Forms.TextBox newLogin;
         private System.Windows.Forms.TextBox newPassword;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label confPassword_l;
         private System.Windows.Forms.TextBox newPasswordConfirm;
         private System.Windows.Forms.GroupBox user_gb;
         private System.Windows.Forms.GroupBox AI_gb;
         private System.Windows.Forms.RadioButton femaleSexChoose_rb;
-        private System.Windows.Forms.RadioButton maleSexChoose_rb;
+        private System.Windows.Forms.RadioButton maleGenderChoose_rb;
         private System.Windows.Forms.CheckBox createAIChoose_cb;
         private System.Windows.Forms.Button deleteName_btn;
         private System.Windows.Forms.Button addName_btn;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label helperNames_l;
         private System.Windows.Forms.ListBox names_lb;
     }
 }
