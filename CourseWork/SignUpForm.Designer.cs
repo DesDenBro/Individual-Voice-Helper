@@ -50,9 +50,9 @@
             // 
             // create_btn
             // 
-            this.create_btn.Location = new System.Drawing.Point(12, 179);
+            this.create_btn.Location = new System.Drawing.Point(7, 178);
             this.create_btn.Name = "create_btn";
-            this.create_btn.Size = new System.Drawing.Size(157, 28);
+            this.create_btn.Size = new System.Drawing.Size(157, 35);
             this.create_btn.TabIndex = 0;
             this.create_btn.Text = "Create_btn";
             this.create_btn.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             this.user_gb.Controls.Add(this.newPasswordConfirm);
             this.user_gb.Controls.Add(this.newPassword);
             this.user_gb.Controls.Add(this.confPassword_l);
-            this.user_gb.Location = new System.Drawing.Point(12, 12);
+            this.user_gb.Location = new System.Drawing.Point(7, 12);
             this.user_gb.Name = "user_gb";
-            this.user_gb.Size = new System.Drawing.Size(157, 161);
+            this.user_gb.Size = new System.Drawing.Size(157, 160);
             this.user_gb.TabIndex = 7;
             this.user_gb.TabStop = false;
             this.user_gb.Text = "user_gb";
@@ -131,17 +131,16 @@
             this.AI_gb.Controls.Add(this.names_lb);
             this.AI_gb.Controls.Add(this.femaleSexChoose_rb);
             this.AI_gb.Controls.Add(this.maleGenderChoose_rb);
-            this.AI_gb.Controls.Add(this.createAIChoose_cb);
-            this.AI_gb.Location = new System.Drawing.Point(176, 12);
+            this.AI_gb.Location = new System.Drawing.Point(171, 34);
             this.AI_gb.Name = "AI_gb";
-            this.AI_gb.Size = new System.Drawing.Size(251, 195);
+            this.AI_gb.Size = new System.Drawing.Size(251, 179);
             this.AI_gb.TabIndex = 8;
             this.AI_gb.TabStop = false;
             this.AI_gb.Text = "AI_gb";
             // 
             // deleteName_btn
             // 
-            this.deleteName_btn.Location = new System.Drawing.Point(164, 145);
+            this.deleteName_btn.Location = new System.Drawing.Point(163, 128);
             this.deleteName_btn.Name = "deleteName_btn";
             this.deleteName_btn.Size = new System.Drawing.Size(81, 44);
             this.deleteName_btn.TabIndex = 12;
@@ -151,7 +150,7 @@
             // 
             // addName_btn
             // 
-            this.addName_btn.Location = new System.Drawing.Point(164, 101);
+            this.addName_btn.Location = new System.Drawing.Point(163, 84);
             this.addName_btn.Name = "addName_btn";
             this.addName_btn.Size = new System.Drawing.Size(81, 44);
             this.addName_btn.TabIndex = 11;
@@ -162,7 +161,7 @@
             // helperNames_l
             // 
             this.helperNames_l.AutoSize = true;
-            this.helperNames_l.Location = new System.Drawing.Point(6, 38);
+            this.helperNames_l.Location = new System.Drawing.Point(5, 21);
             this.helperNames_l.Name = "helperNames_l";
             this.helperNames_l.Size = new System.Drawing.Size(77, 13);
             this.helperNames_l.TabIndex = 10;
@@ -171,7 +170,7 @@
             // names_lb
             // 
             this.names_lb.FormattingEnabled = true;
-            this.names_lb.Location = new System.Drawing.Point(9, 55);
+            this.names_lb.Location = new System.Drawing.Point(8, 38);
             this.names_lb.Name = "names_lb";
             this.names_lb.Size = new System.Drawing.Size(149, 134);
             this.names_lb.TabIndex = 9;
@@ -179,7 +178,7 @@
             // femaleSexChoose_rb
             // 
             this.femaleSexChoose_rb.AutoSize = true;
-            this.femaleSexChoose_rb.Location = new System.Drawing.Point(164, 78);
+            this.femaleSexChoose_rb.Location = new System.Drawing.Point(163, 61);
             this.femaleSexChoose_rb.Name = "femaleSexChoose_rb";
             this.femaleSexChoose_rb.Size = new System.Drawing.Size(125, 17);
             this.femaleSexChoose_rb.TabIndex = 8;
@@ -191,7 +190,7 @@
             // 
             this.maleGenderChoose_rb.AutoSize = true;
             this.maleGenderChoose_rb.Checked = true;
-            this.maleGenderChoose_rb.Location = new System.Drawing.Point(164, 55);
+            this.maleGenderChoose_rb.Location = new System.Drawing.Point(163, 38);
             this.maleGenderChoose_rb.Name = "maleGenderChoose_rb";
             this.maleGenderChoose_rb.Size = new System.Drawing.Size(133, 17);
             this.maleGenderChoose_rb.TabIndex = 7;
@@ -204,7 +203,7 @@
             this.createAIChoose_cb.AutoSize = true;
             this.createAIChoose_cb.Checked = true;
             this.createAIChoose_cb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.createAIChoose_cb.Location = new System.Drawing.Point(9, 19);
+            this.createAIChoose_cb.Location = new System.Drawing.Point(172, 13);
             this.createAIChoose_cb.Name = "createAIChoose_cb";
             this.createAIChoose_cb.Size = new System.Drawing.Size(120, 17);
             this.createAIChoose_cb.TabIndex = 0;
@@ -216,10 +215,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 216);
+            this.ClientSize = new System.Drawing.Size(432, 219);
             this.Controls.Add(this.AI_gb);
             this.Controls.Add(this.user_gb);
             this.Controls.Add(this.create_btn);
+            this.Controls.Add(this.createAIChoose_cb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SignUpForm";
@@ -229,6 +229,7 @@
             this.AI_gb.ResumeLayout(false);
             this.AI_gb.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

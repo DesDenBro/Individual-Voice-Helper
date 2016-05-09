@@ -39,27 +39,34 @@ namespace CourseWork
         // Кнопка для создания нового пользователя
         private void CreateBtn_Click(object sender, EventArgs e)
         {
-            if (newPassword.Text != "" && newLogin.Text != "" && 
-                (!createAIChoose_cb.Checked || (createAIChoose_cb.Checked && (maleGenderChoose_rb.Checked || femaleSexChoose_rb.Checked) && names_lb.Items.Count > 0)))
+            if (newPassword.Text.Trim() != "" && newLogin.Text.Trim() != "" && 
+                (!createAIChoose_cb.Checked || (createAIChoose_cb.Checked && 
+                (maleGenderChoose_rb.Checked || femaleSexChoose_rb.Checked) && names_lb.Items.Count > 0)))
             {
-                
-                if (newPassword.Text == newPasswordConfirm.Text)
+                if (!Gateway.userAlreadyExist(newLogin.Text))
                 {
-                    _login = newLogin.Text;
-                    _password = PasswordStorage.CreateHash(newPassword.Text);
-
-                    if (createAIChoose_cb.Checked)
+                    if (newPassword.Text == newPasswordConfirm.Text)
                     {
-                        _AIForNewUser = new AI(Gateway.getCountOfTableRows("User"), getNames(), maleGenderChoose_rb.Checked);
-                    }
+                        _login = newLogin.Text;
+                        _password = PasswordStorage.CreateHash(newPassword.Text);
 
-                    this.DialogResult = DialogResult.OK;
+                        if (createAIChoose_cb.Checked)
+                        {
+                            _AIForNewUser = new AI(Gateway.getCountOfTableRows("User"), getNames(), maleGenderChoose_rb.Checked);
+                        }
+
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show(Language.getControlText("equPasswords_error", this.Name));
+                        newPassword.Text = "";
+                        newPasswordConfirm.Text = "";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(Language.getControlText("equPasswords_error", this.Name));
-                    newPassword.Text = "";
-                    newPasswordConfirm.Text = "";
+                    MessageBox.Show(Language.getControlText("userAlreadyExist_error", this.Name));
                 }
             }
             else
@@ -87,10 +94,10 @@ namespace CourseWork
         // Выбор создания (или нет), голосового помощника для пользователя
         private void createAIChoose_cb_CheckedChanged(object sender, EventArgs e)
         {
-            maleGenderChoose_rb.Enabled = femaleSexChoose_rb.Enabled = createAIChoose_cb.Checked;
-            maleGenderChoose_rb.Checked = femaleSexChoose_rb.Checked = false;
-            names_lb.Items.Clear(); names_lb.Enabled = createAIChoose_cb.Checked;
-            addName_btn.Enabled = deleteName_btn.Enabled = createAIChoose_cb.Checked;
+            foreach (Control control in AI_gb.Controls)
+            {
+                control.Enabled = createAIChoose_cb.Checked;
+            }
         }
 
         // Добавление имени

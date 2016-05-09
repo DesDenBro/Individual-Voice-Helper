@@ -43,7 +43,7 @@ namespace CourseWork
         private void checkLogin()
         {
             bool access = false;
-            Gateway.checkUser(ref access, ref _userID, Login_tb.Text, Password_tb.Text);
+            Gateway.checkUserAccess(ref access, ref _userID, Login_tb.Text, Password_tb.Text);
 
             if (!access)
             {

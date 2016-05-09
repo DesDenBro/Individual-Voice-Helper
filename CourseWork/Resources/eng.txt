@@ -39,6 +39,7 @@ AINameLength_error = Name can't be more then 20 simbols!
 attention = Attention!
 AINamesCount_error = Names can't be more then 10!
 AINameDoesntChooseForDelete_error = You must choose element from list before delete it!
+userAlreadyExist_error = User with this login is already exist!
 *
 programToolStripMenuItem = Program
 changeUserToolStripMenuItem = Change user

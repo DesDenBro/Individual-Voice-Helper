@@ -215,7 +215,25 @@ namespace CourseWork
 
         #region --- Методы для User ---
 
-        public static void checkUser(ref bool access, ref int userID, string wroteLogin, string wrotePass)
+        public static bool userAlreadyExist(string wroteLogin)
+        {
+            openConnectionToTable("User");
+            readTable();
+
+            while (_dataReader.Read())
+            {
+                if (_dataReader["Login"].ToString().Trim() == wroteLogin.Trim())
+                {
+                    closeConnectionToTable();
+                    return true;
+                }
+            }
+
+            closeConnectionToTable();
+            return false;
+        }
+
+        public static void checkUserAccess(ref bool access, ref int userID, string wroteLogin, string wrotePass)
         {
             openConnectionToTable("User");
             readTable();
