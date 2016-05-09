@@ -1,169 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CourseWork.AddEventForm" Collapsed="true">
-    <Position X="4.75" Y="4.75" Width="1.5" />
+    <Position X="4.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACBACAAAACAQAJAABACAAAACAAAAAAAAAAkAAEIAAAA=</HashCode>
+      <HashCode>MCBAAAAAAGAAAIAABACQAAACBAAAAAAAAgkAAEIAAAE=</HashCode>
       <FileName>AddEventForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.AuthorizationForm" Collapsed="true">
-    <Position X="0.5" Y="1" Width="1.75" />
+    <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAABCAAABIAAQCAEAgCAAgAAAAAAAIAAAAABBA=</HashCode>
+      <HashCode>AAAAAAAAASIAAAIAAWCgEAgCAAgAAAAAAAoAAAAABBA=</HashCode>
       <FileName>AuthorizationForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Clock" Collapsed="true">
-    <Position X="3.75" Y="5.75" Width="1.75" />
+    <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEEAEAAgABAAABAAEBAwQAAIAHAAMBEAUAAA=</HashCode>
+      <HashCode>EAAAAAAAEEAEAAgABBAABAAEAAwQAAIAHAAMBEAUAAA=</HashCode>
       <FileName>Clock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.EditEventForm" Collapsed="true">
-    <Position X="3" Y="4.75" Width="1.5" />
+    <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAACAAAACAAAAAABACAAgAChAAAAAAAAAgAAEAAAAE=</HashCode>
+      <HashCode>MCAAAAAAAGAAAAAABACQAgAChAAAAAAAAggAAEAAAAE=</HashCode>
       <FileName>EditEventForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Event" Collapsed="true">
-    <Position X="4.75" Y="0.75" Width="1.5" />
+    <Position X="5.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAKKAAAEEQABAABAAgAAQAEAQAAAAJAQEQGAAAAQA=</HashCode>
+      <HashCode>AAAAIKAAAEAQgBAADAARAAQAEAQAAAAJAQAAiAAEAUA=</HashCode>
       <FileName>Event.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Gateway" Collapsed="true">
-    <Position X="11.5" Y="0.75" Width="1.5" />
+    <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BCIAAAAAgABAQMgQCAAAAAgAAAAAQAAIAAAAgBAAJAA=</HashCode>
+      <HashCode>BCMAAAAAgACCQMgQCAAAAAgACAABQAAIAAAAhBBAJAA=</HashCode>
       <FileName>Gateway.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.MainForm" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="CourseWork.MainForm.EventInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CourseWork.MainForm.Filter" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>MCiEWxSCBimHACCoAgGg+QEiRgzp0QEBEACACJAgIyE=</HashCode>
+      <HashCode>MCCEWxSCBimHACCoAgOg+QEiRgzp0QEBEACACJAgIyE=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.NoteForm" Collapsed="true">
-    <Position X="11.5" Y="1.75" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAgQAAAAACAAABAAAACCAAACAAAAABAAAAAAAAEAAAA=</HashCode>
+      <HashCode>IAgQAAAAACABAAAAAACCAAACAAAAABAAAAAAAAEAAAA=</HashCode>
       <FileName>NoteForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CourseWork.Program" Collapsed="true">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+  <Class Name="CourseWork.SignUpForm" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CourseWork.SingUpForm" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>QBUAAAAACmUAABAAAASgAEACAAIAAAACAAAQIAiCCQA=</HashCode>
-      <FileName>SingUpForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CourseWork.Properties.Resources" Collapsed="true">
-    <Position X="2.25" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAABAABIAAAAAABAAABEICAAQCAAAQAAAAAAAEAAIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CourseWork.Properties.Settings" Collapsed="true">
-    <Position X="4" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIQAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QBUAAAAACmQAAAAAAQSgAEAGCAoAAAACAAgQIAgCCQA=</HashCode>
+      <FileName>SignUpForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.SettingsForm" Collapsed="true">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="9.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAgCAAABARgBCAAABCABAIAACAAAAEgAFAAVA=</HashCode>
+      <HashCode>AAAAAAAAACACEAAAAQCAAIASCAAAAgAAAAAEAAECAUQ=</HashCode>
       <FileName>SettingsForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.InvalidHashException" Collapsed="true">
-    <Position X="0.5" Y="4" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PasswordStorage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.CannotPerformOperationException" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PasswordStorage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.PasswordStorage" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgEAhCIAQCECACAAIAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>PasswordStorage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.AI" Collapsed="true">
-    <Position X="8.25" Y="0.75" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAoAAAAAAAhAEAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>AI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Bookmark" Collapsed="true">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+    <Position X="9.25" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAQAAAAABAAAAAQAAAAAAAAAAAAAQAAAAAA=</HashCode>
-      <FileName>Bookmarks.cs</FileName>
+      <HashCode>AAAAIAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Bookmark.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.AbstractBookmarkReader" Collapsed="true">
-    <Position X="8.25" Y="4.5" Width="1.5" />
+    <Position X="9.25" Y="4.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bookmarks.cs</FileName>
+      <FileName>Bookmark.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.BookmarksReaderChrome" Collapsed="true">
-    <Position X="7" Y="5.75" Width="1.5" />
+    <Position X="8.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bookmarks.cs</FileName>
+      <FileName>Bookmark.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.BookmarksReaderYandexBrowser" Collapsed="true">
-    <Position X="9.25" Y="5.75" Width="1.5" />
+    <Position X="10.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bookmarks.cs</FileName>
+      <FileName>Bookmark.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.VoiceAnalizer" Collapsed="true">
-    <Position X="8.25" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="CourseWork.VoiceAnalizer.State" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>VoiceAnalizer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>ACgAIAoEAQDCQAADAACAAAAAQEAABAAAACQAABAAAAA=</HashCode>
+      <HashCode>AGggIAoEAQBCQAAHAIKASQQAQUAgAAAAACQAABAAAAA=</HashCode>
       <FileName>VoiceAnalizer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CourseWork.TranslitLetter" Collapsed="true">
-    <Position X="10" Y="4" Width="1.5" />
+  <Class Name="CourseWork.ControlBookmarksForm" Collapsed="true">
+    <Position X="9.25" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>BAAAAEAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bookmarks.cs</FileName>
+      <HashCode>AAAACAgAADFIICAAACiBABACABAAwBAACCAAgAJAACA=</HashCode>
+      <FileName>ControlBookmarksForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CourseWork.ControlBookmarksForm" Collapsed="true">
-    <Position X="4.75" Y="3.5" Width="1.5" />
+  <Class Name="CourseWork.User" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAgAADAAAAAAACiBABACAQAAQBAACAAAAAIAAAA=</HashCode>
-      <FileName>ControlBookmarksForm.cs</FileName>
+      <HashCode>AAIAAAAAAAAACAABAAAAAAgAQAgAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.TranslitWord" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TranslitWord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Language" Collapsed="true">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIQAAAAAAQQAAAAAAEAAAAAgAAAAAAAIAAAAAAQAA=</HashCode>
+      <FileName>Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.CannotReadTableExeption" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gateway.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.ControlProgramsForm" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACACCACAADAIAAAAQICAAEECAAAQQAAACAAAAAAAIAg=</HashCode>
+      <FileName>ControlProgramsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.ComputerProgram" Collapsed="true">
+    <Position X="9.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ComputerProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.CommandListForm" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAQACgAgAIAAACgAAECAAEAAAAgAAQAAFAAAAA=</HashCode>
+      <FileName>CommandListForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

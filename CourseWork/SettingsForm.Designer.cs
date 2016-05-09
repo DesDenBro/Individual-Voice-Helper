@@ -97,9 +97,9 @@
             // 
             // showCommands_btn
             // 
-            this.showCommands_btn.Location = new System.Drawing.Point(268, 16);
+            this.showCommands_btn.Location = new System.Drawing.Point(15, 110);
             this.showCommands_btn.Name = "showCommands_btn";
-            this.showCommands_btn.Size = new System.Drawing.Size(112, 41);
+            this.showCommands_btn.Size = new System.Drawing.Size(122, 52);
             this.showCommands_btn.TabIndex = 0;
             this.showCommands_btn.Text = "showCommands_btn";
             this.showCommands_btn.UseVisualStyleBackColor = true;

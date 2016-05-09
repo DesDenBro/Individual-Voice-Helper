@@ -72,9 +72,9 @@
             this.password_l.AutoSize = true;
             this.password_l.Location = new System.Drawing.Point(14, 65);
             this.password_l.Name = "password_l";
-            this.password_l.Size = new System.Drawing.Size(53, 13);
+            this.password_l.Size = new System.Drawing.Size(60, 13);
             this.password_l.TabIndex = 2;
-            this.password_l.Text = "Password";
+            this.password_l.Text = "password_l";
             // 
             // newLogin
             // 
@@ -134,7 +134,7 @@
             this.AI_gb.Controls.Add(this.createAIChoose_cb);
             this.AI_gb.Location = new System.Drawing.Point(176, 12);
             this.AI_gb.Name = "AI_gb";
-            this.AI_gb.Size = new System.Drawing.Size(229, 195);
+            this.AI_gb.Size = new System.Drawing.Size(251, 195);
             this.AI_gb.TabIndex = 8;
             this.AI_gb.TabStop = false;
             this.AI_gb.Text = "AI_gb";
@@ -143,7 +143,7 @@
             // 
             this.deleteName_btn.Location = new System.Drawing.Point(164, 145);
             this.deleteName_btn.Name = "deleteName_btn";
-            this.deleteName_btn.Size = new System.Drawing.Size(59, 44);
+            this.deleteName_btn.Size = new System.Drawing.Size(81, 44);
             this.deleteName_btn.TabIndex = 12;
             this.deleteName_btn.Text = "deleteName_btn";
             this.deleteName_btn.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             // 
             this.addName_btn.Location = new System.Drawing.Point(164, 101);
             this.addName_btn.Name = "addName_btn";
-            this.addName_btn.Size = new System.Drawing.Size(59, 44);
+            this.addName_btn.Size = new System.Drawing.Size(81, 44);
             this.addName_btn.TabIndex = 11;
             this.addName_btn.Text = "addName_btn";
             this.addName_btn.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 216);
+            this.ClientSize = new System.Drawing.Size(441, 216);
             this.Controls.Add(this.AI_gb);
             this.Controls.Add(this.user_gb);
             this.Controls.Add(this.create_btn);

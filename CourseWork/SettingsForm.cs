@@ -94,6 +94,7 @@ namespace CourseWork
 
         #endregion
 
+
         private void languages_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (MessageBox.Show(Language.getControlText("changeLanguageAttention", this.Name), Language.getControlText("attention", this.Name), MessageBoxButtons.YesNo) == DialogResult.Yes)

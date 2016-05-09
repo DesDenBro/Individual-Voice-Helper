@@ -30,7 +30,7 @@ namespace CourseWork
             _notification = new Clock(Language.getControlText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
             this.Controls.Add(_notification.ClockPanel);
 
-            voiceChecker.Start();
+            if (VoiceAnalizer.getVoiceAnalizer() != null) voiceChecker.Start();
         }
 
         private void readDate(string type, string date)

@@ -43,7 +43,7 @@ namespace CourseWork
             _notification.setTime(eventForEdit.NotificationDateTime);
             this.Controls.Add(_notification.ClockPanel);
 
-            voiceChecker.Start();
+            if (VoiceAnalizer.getVoiceAnalizer() != null) voiceChecker.Start();
         }
 
         private void editEvent_btn_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace CourseWork
                 }
                 _tempEvent.NotificationDateTime = _notification.ChoosenDateTime;
 
-                voiceChecker.Stop();
+                if (VoiceAnalizer.getVoiceAnalizer() != null) voiceChecker.Stop();
                 this.DialogResult = DialogResult.OK;
             }
             else

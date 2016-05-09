@@ -40,7 +40,7 @@
             this.path_tb.Location = new System.Drawing.Point(12, 40);
             this.path_tb.Name = "path_tb";
             this.path_tb.ReadOnly = true;
-            this.path_tb.Size = new System.Drawing.Size(234, 20);
+            this.path_tb.Size = new System.Drawing.Size(180, 20);
             this.path_tb.TabIndex = 9;
             // 
             // programs_cb
@@ -50,17 +50,17 @@
             this.programs_cb.FormattingEnabled = true;
             this.programs_cb.Location = new System.Drawing.Point(12, 12);
             this.programs_cb.Name = "programs_cb";
-            this.programs_cb.Size = new System.Drawing.Size(234, 21);
+            this.programs_cb.Size = new System.Drawing.Size(180, 21);
             this.programs_cb.TabIndex = 8;
             this.programs_cb.SelectedIndexChanged += new System.EventHandler(this.programs_cb_SelectedIndexChanged);
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(180, 66);
+            this.delete_btn.Location = new System.Drawing.Point(12, 150);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(66, 36);
+            this.delete_btn.Size = new System.Drawing.Size(180, 36);
             this.delete_btn.TabIndex = 7;
-            this.delete_btn.Text = "Delete";
+            this.delete_btn.Text = "delete_btn";
             this.delete_btn.UseVisualStyleBackColor = true;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
@@ -68,19 +68,19 @@
             // 
             this.add_btn.Location = new System.Drawing.Point(12, 66);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(71, 36);
+            this.add_btn.Size = new System.Drawing.Size(180, 36);
             this.add_btn.TabIndex = 5;
-            this.add_btn.Text = "Add";
+            this.add_btn.Text = "add_btn";
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // testProgram_btn
             // 
-            this.testProgram_btn.Location = new System.Drawing.Point(89, 66);
+            this.testProgram_btn.Location = new System.Drawing.Point(12, 108);
             this.testProgram_btn.Name = "testProgram_btn";
-            this.testProgram_btn.Size = new System.Drawing.Size(85, 36);
+            this.testProgram_btn.Size = new System.Drawing.Size(180, 36);
             this.testProgram_btn.TabIndex = 10;
-            this.testProgram_btn.Text = "Test start";
+            this.testProgram_btn.Text = "testProgram_btn";
             this.testProgram_btn.UseVisualStyleBackColor = true;
             this.testProgram_btn.Click += new System.EventHandler(this.testProgram_btn_Click);
             // 
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 111);
+            this.ClientSize = new System.Drawing.Size(202, 198);
             this.Controls.Add(this.testProgram_btn);
             this.Controls.Add(this.path_tb);
             this.Controls.Add(this.programs_cb);

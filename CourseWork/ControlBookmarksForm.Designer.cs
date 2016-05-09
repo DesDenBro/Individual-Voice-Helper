@@ -46,7 +46,7 @@
             // 
             this.add_btn.Location = new System.Drawing.Point(6, 73);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(71, 36);
+            this.add_btn.Size = new System.Drawing.Size(165, 36);
             this.add_btn.TabIndex = 0;
             this.add_btn.Text = "add_btn";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             // 
             // edit_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(84, 73);
+            this.edit_btn.Location = new System.Drawing.Point(6, 115);
             this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(75, 36);
+            this.edit_btn.Size = new System.Drawing.Size(165, 36);
             this.edit_btn.TabIndex = 1;
             this.edit_btn.Text = "edit_btn";
             this.edit_btn.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(165, 73);
+            this.delete_btn.Location = new System.Drawing.Point(6, 157);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(75, 36);
+            this.delete_btn.Size = new System.Drawing.Size(165, 36);
             this.delete_btn.TabIndex = 2;
             this.delete_btn.Text = "delete_btn";
             this.delete_btn.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.bookmarks_cb.FormattingEnabled = true;
             this.bookmarks_cb.Location = new System.Drawing.Point(6, 19);
             this.bookmarks_cb.Name = "bookmarks_cb";
-            this.bookmarks_cb.Size = new System.Drawing.Size(234, 21);
+            this.bookmarks_cb.Size = new System.Drawing.Size(165, 21);
             this.bookmarks_cb.TabIndex = 3;
             this.bookmarks_cb.SelectedIndexChanged += new System.EventHandler(this.bookmarks_cb_SelectedIndexChanged);
             // 
@@ -88,7 +88,7 @@
             this.link_tb.Location = new System.Drawing.Point(6, 47);
             this.link_tb.Name = "link_tb";
             this.link_tb.ReadOnly = true;
-            this.link_tb.Size = new System.Drawing.Size(234, 20);
+            this.link_tb.Size = new System.Drawing.Size(165, 20);
             this.link_tb.TabIndex = 4;
             // 
             // browserChoise_l
@@ -132,7 +132,7 @@
             this.crud_gb.Controls.Add(this.link_tb);
             this.crud_gb.Location = new System.Drawing.Point(12, 12);
             this.crud_gb.Name = "crud_gb";
-            this.crud_gb.Size = new System.Drawing.Size(248, 117);
+            this.crud_gb.Size = new System.Drawing.Size(181, 203);
             this.crud_gb.TabIndex = 8;
             this.crud_gb.TabStop = false;
             this.crud_gb.Text = "crud_gb";
@@ -142,9 +142,9 @@
             this.import_gb.Controls.Add(this.importBM_btn);
             this.import_gb.Controls.Add(this.browserChoice_cb);
             this.import_gb.Controls.Add(this.browserChoise_l);
-            this.import_gb.Location = new System.Drawing.Point(266, 12);
+            this.import_gb.Location = new System.Drawing.Point(199, 12);
             this.import_gb.Name = "import_gb";
-            this.import_gb.Size = new System.Drawing.Size(190, 117);
+            this.import_gb.Size = new System.Drawing.Size(190, 120);
             this.import_gb.TabIndex = 9;
             this.import_gb.TabStop = false;
             this.import_gb.Text = "import_gb";
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 139);
+            this.ClientSize = new System.Drawing.Size(402, 223);
             this.Controls.Add(this.import_gb);
             this.Controls.Add(this.crud_gb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

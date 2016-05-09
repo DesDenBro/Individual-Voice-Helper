@@ -160,7 +160,7 @@ namespace CourseWork
             for (int i = _eventList.Count - 1; i >= 0; i--)
             {
                 if ((_showEvent == Filter.InProcess && !_eventList[i].IsHappened && !_eventList[i].IsCanceled) ||
-                    (_showEvent == Filter.Ended && !_eventList[i].IsHappened && !_eventList[i].IsCanceled) && _eventList[i].Date < DateTime.Now ||
+                    (_showEvent == Filter.Ended && !_eventList[i].IsHappened && !_eventList[i].IsCanceled && _eventList[i].Date < DateTime.Now) ||
                     (_showEvent == Filter.Happened && _eventList[i].IsHappened) ||
                     (_showEvent == Filter.Canceled && _eventList[i].IsCanceled) ||
                     (_showEvent == Filter.All) ||
@@ -220,7 +220,7 @@ namespace CourseWork
                     eventDate.Text = Language.getControlText("smallPanelDate", this.Name) + _eventList[i].Date.Day + "."
                                               + _eventList[i].Date.Month + "."
                                               + _eventList[i].Date.Year + "\r\n"
-                                  + Language.getControlText("smallPanelTime", this.Name) + _eventList[i].Date.Hour + " : "
+                                   + Language.getControlText("smallPanelTime", this.Name) + _eventList[i].Date.Hour + " : "
                                               + _eventList[i].Date.Minute;
                     eventDate.Left = commonEventPanel.Width - eventDate.Width - 10;
                     eventDate.Top = 10;
@@ -445,7 +445,7 @@ namespace CourseWork
                 note.BackColor = Color.Transparent;
                 if (eventForShow.IsCanceled)
                 {
-                    note.Text = Language.getControlText("bigPanelHeppenedRecall", this.Name) + "\r\n";
+                    note.Text = Language.getControlText("bigPanelCanceledReason", this.Name) + "\r\n";
                     if (eventForShow.IsCanceledReason.Trim() != "")
                     {
                         note.Text += eventForShow.IsCanceledReason;
@@ -459,7 +459,7 @@ namespace CourseWork
                 {
                     if (eventForShow.IsHappened)
                     {
-                        note.Text = Language.getControlText("bigPanelCanceledReason", this.Name) + "\r\n";
+                        note.Text = Language.getControlText("bigPanelHappenedRecall", this.Name) + "\r\n";
                         if (eventForShow.IsHappenedNote.Trim() != "")
                         {
                             note.Text += eventForShow.IsHappenedNote;
@@ -560,7 +560,7 @@ namespace CourseWork
             {
                 _eventList[_choosenIndexInEventListNow] = eef.CorrectEvent;
                 Gateway.updateEventInDB(_eventList[_choosenIndexInEventListNow]);
-                VoiceAnalizer.getVoiceAnalizer().refreshGrammar();
+                if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceAnalizer.getVoiceAnalizer().refreshGrammar();
                 if (_eventPanelStatus == EventInfo.Compressed)
                 {
                     reCreateMainForm();
@@ -572,7 +572,7 @@ namespace CourseWork
                 }
             }
 
-            VoiceChecker.Start();
+            if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceChecker.Start();
         }
 
         private void CanceledBtn_Click(object sender, EventArgs e)
@@ -743,11 +743,11 @@ namespace CourseWork
             {
                 User.GetUser().EventList.Add(aef.getNewEvent());
                 Gateway.addEventInDB(aef.getNewEvent(), User.GetUser().EventList.Count);
-                VoiceAnalizer.getVoiceAnalizer().refreshGrammar();
+                if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceAnalizer.getVoiceAnalizer().refreshGrammar();
             }
             reCreateMainForm();
 
-            VoiceChecker.Start();
+            if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceChecker.Start();
         }
 
         // Изменение размеров главной формы

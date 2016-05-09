@@ -42,7 +42,7 @@
             // 
             // eventText_tb
             // 
-            this.eventText_tb.Location = new System.Drawing.Point(12, 215);
+            this.eventText_tb.Location = new System.Drawing.Point(12, 243);
             this.eventText_tb.Multiline = true;
             this.eventText_tb.Name = "eventText_tb";
             this.eventText_tb.Size = new System.Drawing.Size(353, 169);
@@ -50,7 +50,7 @@
             // 
             // createEvent_btn
             // 
-            this.createEvent_btn.Location = new System.Drawing.Point(12, 390);
+            this.createEvent_btn.Location = new System.Drawing.Point(12, 418);
             this.createEvent_btn.Name = "createEvent_btn";
             this.createEvent_btn.Size = new System.Drawing.Size(353, 51);
             this.createEvent_btn.TabIndex = 1;
@@ -61,7 +61,7 @@
             // eventText_l
             // 
             this.eventText_l.AutoSize = true;
-            this.eventText_l.Location = new System.Drawing.Point(9, 197);
+            this.eventText_l.Location = new System.Drawing.Point(9, 225);
             this.eventText_l.Name = "eventText_l";
             this.eventText_l.Size = new System.Drawing.Size(63, 13);
             this.eventText_l.TabIndex = 3;
@@ -69,15 +69,15 @@
             // 
             // eventName_tb
             // 
-            this.eventName_tb.Location = new System.Drawing.Point(80, 10);
+            this.eventName_tb.Location = new System.Drawing.Point(12, 29);
             this.eventName_tb.Name = "eventName_tb";
-            this.eventName_tb.Size = new System.Drawing.Size(285, 20);
+            this.eventName_tb.Size = new System.Drawing.Size(353, 20);
             this.eventName_tb.TabIndex = 6;
             // 
             // eventName_l
             // 
             this.eventName_l.AutoSize = true;
-            this.eventName_l.Location = new System.Drawing.Point(9, 13);
+            this.eventName_l.Location = new System.Drawing.Point(9, 10);
             this.eventName_l.Name = "eventName_l";
             this.eventName_l.Size = new System.Drawing.Size(70, 13);
             this.eventName_l.TabIndex = 7;
@@ -91,7 +91,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.voiceCommand_ss});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 474);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(377, 22);
             this.statusStrip1.TabIndex = 8;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 471);
+            this.ClientSize = new System.Drawing.Size(377, 496);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.eventName_l);
             this.Controls.Add(this.eventName_tb);

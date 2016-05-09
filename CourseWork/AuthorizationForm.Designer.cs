@@ -86,7 +86,7 @@
             // 
             this.welcome_l.AutoSize = true;
             this.welcome_l.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.welcome_l.Location = new System.Drawing.Point(27, 18);
+            this.welcome_l.Location = new System.Drawing.Point(6, 19);
             this.welcome_l.Name = "welcome_l";
             this.welcome_l.Size = new System.Drawing.Size(140, 33);
             this.welcome_l.TabIndex = 5;

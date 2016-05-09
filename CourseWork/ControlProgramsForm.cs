@@ -25,6 +25,10 @@ namespace CourseWork
         public ControlProgramsForm()
         {
             InitializeComponent();
+
+            Control.ControlCollection tempControls = this.Controls;
+            Language.setControlsText(ref tempControls, this.Name);
+
             _programs = VoiceAnalizer.getVoiceAnalizer().Programs;
 
             foreach (var item in _programs)

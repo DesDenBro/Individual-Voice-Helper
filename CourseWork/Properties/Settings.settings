@@ -11,7 +11,7 @@
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MainDatabase.mdf;Integrated Security=True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">eng</Value>
+      <Value Profile="(Default)">rus</Value>
     </Setting>
   </Settings>
 </SettingsFile>
