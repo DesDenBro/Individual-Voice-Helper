@@ -40,20 +40,20 @@ namespace CourseWork
         private void add_btn_Click(object sender, EventArgs e)
         {
             NoteForm nfname = new NoteForm(
-                Language.getControlText("noteBMName", this.Name), 
-                Language.getControlText("noteBMNameDescr", this.Name), 
-                Language.getControlText("noteBM_btn", this.Name),
-                Language.getControlText("noteBMNameAttention", this.Name));
+                Language.getElementText("noteBMName", this.Name), 
+                Language.getElementText("noteBMNameDescr", this.Name), 
+                Language.getElementText("noteBM_btn", this.Name),
+                Language.getElementText("noteBMNameAttention", this.Name));
             nfname.ShowDialog();
 
             if (nfname.DialogResult == DialogResult.OK)
             {
                 NoteForm nflink = new NoteForm(
-                    Language.getControlText("noteBMLink", this.Name), 
-                    Language.getControlText("noteBMLinkDescr", this.Name),
-                    Language.getControlText("noteBM_btn", this.Name),
-                    Language.getControlText("noteBMLinkAttention", this.Name),
-                    Language.getControlText("noteBMLinkFirstPart", this.Name));
+                    Language.getElementText("noteBMLink", this.Name), 
+                    Language.getElementText("noteBMLinkDescr", this.Name),
+                    Language.getElementText("noteBM_btn", this.Name),
+                    Language.getElementText("noteBMLinkAttention", this.Name),
+                    Language.getElementText("noteBMLinkFirstPart", this.Name));
                 nflink.ShowDialog();
 
                 if (nflink.DialogResult == DialogResult.OK)
@@ -71,10 +71,10 @@ namespace CourseWork
         private void edit_btn_Click(object sender, EventArgs e)
         {
             NoteForm nflink = new NoteForm(
-                    Language.getControlText("noteBMLink", this.Name),
-                    Language.getControlText("noteBMLinkDescr", this.Name),
-                    Language.getControlText("noteBM_btn", this.Name),
-                    Language.getControlText("noteBMLinkAttention", this.Name), 
+                    Language.getElementText("noteBMLink", this.Name),
+                    Language.getElementText("noteBMLinkDescr", this.Name),
+                    Language.getElementText("noteBM_btn", this.Name),
+                    Language.getElementText("noteBMLinkAttention", this.Name), 
                     _bookmarks[bookmarks_cb.SelectedIndex].Link);
             nflink.ShowDialog();
 
@@ -90,8 +90,8 @@ namespace CourseWork
         private void delete_btn_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show(
-                Language.getControlText("deleteBMAttention", this.Name),
-                Language.getControlText("attention", this.Name), 
+                Language.getElementText("deleteBMAttention", this.Name),
+                Language.getElementText("attention", this.Name), 
                 MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
@@ -111,13 +111,14 @@ namespace CourseWork
             link_tb.Text = _bookmarks[bookmarks_cb.SelectedIndex].Link;
         }
 
+        // А что если что-то поменял, но не хочешь сохранять?
         private void ControlBookmarksForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (_smthChanged)
             {
                 DialogResult dr = MessageBox.Show(
-                Language.getControlText("programCloseAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("programCloseAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)
@@ -169,8 +170,8 @@ namespace CourseWork
             if (_smthChanged) bookmarks_cb.SelectedIndex = 0;
 
             MessageBox.Show(
-                string.Format(Language.getControlText("countOfAddedBM", this.Name) + " {0}", newBMAdded), 
-                Language.getControlText("attention", this.Name));
+                string.Format(Language.getElementText("countOfAddedBM", this.Name) + " {0}", newBMAdded), 
+                Language.getElementText("attention", this.Name));
         }
     }
 }

@@ -36,9 +36,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Gateway" Collapsed="true">
-    <Position X="0.5" Y="6.25" Width="1.5" />
+    <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BCMAAAAAgACCQMgQCAAAAAgACAABQAAIAAAAhBBAJAA=</HashCode>
+      <HashCode>BCMAAAAAggCCQMgQCAAAAAgACAABQAAIAAAAhBRAJAA=</HashCode>
       <FileName>Gateway.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,20 +47,8 @@
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="CourseWork.MainForm.EventInfo" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>MainForm.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Enum Name="CourseWork.MainForm.Filter" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>MainForm.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>MCCEWxSCBimHACCoAgOg+QEiRgzp0QEBEACACJAgIyE=</HashCode>
+      <HashCode>MCCEWxSCBimHACCoAgOg+QEiRgzp0QEBEACACJggIyE=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -74,7 +62,7 @@
   <Class Name="CourseWork.SignUpForm" Collapsed="true">
     <Position X="0.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>QBUAAAAACmQAAAAAAQSgAEAGCAoAAAACAAgQIAgCCQA=</HashCode>
+      <HashCode>QBEAAAAACmQAAAAAAQSgAAAGCAgAAAAAAAgAAAgCCQA=</HashCode>
       <FileName>SignUpForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,13 +131,6 @@
   </Class>
   <Class Name="CourseWork.VoiceAnalizer" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="CourseWork.VoiceAnalizer.State" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>VoiceAnalizer.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AGggIAoEAQBCQAAHAIKASQQAQUAgAAAAACQAABAAAAA=</HashCode>
       <FileName>VoiceAnalizer.cs</FileName>
@@ -184,7 +165,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.CannotReadTableExeption" Collapsed="true">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+    <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gateway.cs</FileName>

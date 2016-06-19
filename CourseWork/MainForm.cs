@@ -96,8 +96,20 @@ namespace CourseWork
             if (_AI != null)
             {
                 VoiceAnalizer.createVoiceAnalizer(_AI); // Если для пользователя есть голосовой помощник, то активируем его
-                VoiceChecker.Start();                   // Запускаем таймер для голосовой обработки
-            }
+                VoiceCheckerStart();                    // Запускаем таймер для голосовой обработки
+            }      
+        }
+
+        private void VoiceCheckerStart()
+        {
+            if (VoiceAnalizer.getVoiceAnalizer() != null)
+                VoiceChecker.Start();
+        }
+
+        private void VoiceCheckerStop()
+        {
+            if (VoiceAnalizer.getVoiceAnalizer() != null)
+                VoiceChecker.Stop();
         }
 
         private void VoiceChecker_Tick(object sender, EventArgs e)
@@ -184,7 +196,7 @@ namespace CourseWork
                                 HappenedBtn.Width = 25;
                                 HappenedBtn.Height = 25;
                                 HappenedBtn.BackColor = Color.Green;
-                                HappenedBtn.Text = Language.getControlText("smallPanelHappened_btn", this.Name);
+                                HappenedBtn.Text = Language.getElementText("smallPanelHappened_btn", this.Name);
                                 HappenedBtn.TextAlign = ContentAlignment.MiddleCenter;
                                 HappenedBtn.Left = commonEventPanel.Width - HappenedBtn.Width - 5;
                                 HappenedBtn.Top = commonEventPanel.Height - HappenedBtn.Height - 30;
@@ -197,7 +209,7 @@ namespace CourseWork
                         CanceledBtn.Width = 25;
                         CanceledBtn.Height = 25;
                         CanceledBtn.BackColor = Color.Red;
-                        CanceledBtn.Text = Language.getControlText("smallPanelCanceled_btn", this.Name);
+                        CanceledBtn.Text = Language.getElementText("smallPanelCanceled_btn", this.Name);
                         CanceledBtn.TextAlign = ContentAlignment.MiddleCenter;
                         CanceledBtn.Left = commonEventPanel.Width - HappenedBtn.Width - 5;
                         CanceledBtn.Top = commonEventPanel.Height - HappenedBtn.Height - 5;
@@ -217,10 +229,10 @@ namespace CourseWork
 
                     // Дата события
                     Label eventDate = new Label();
-                    eventDate.Text = Language.getControlText("smallPanelDate", this.Name) + _eventList[i].Date.Day + "."
+                    eventDate.Text = Language.getElementText("smallPanelDate", this.Name) + _eventList[i].Date.Day + "."
                                               + _eventList[i].Date.Month + "."
                                               + _eventList[i].Date.Year + "\r\n"
-                                   + Language.getControlText("smallPanelTime", this.Name) + _eventList[i].Date.Hour + " : "
+                                   + Language.getElementText("smallPanelTime", this.Name) + _eventList[i].Date.Hour + " : "
                                               + _eventList[i].Date.Minute;
                     eventDate.Left = commonEventPanel.Width - eventDate.Width - 10;
                     eventDate.Top = 10;
@@ -246,7 +258,7 @@ namespace CourseWork
                         // Кнопка редактирования события
                         Button EditBtn = new Button();
                         EditBtn.Name = _eventList[i].ID.ToString();
-                        EditBtn.Text = Language.getControlText("smallPanelEdit_btn", this.Name);
+                        EditBtn.Text = Language.getElementText("smallPanelEdit_btn", this.Name);
                         EditBtn.TextAlign = ContentAlignment.MiddleCenter;
                         EditBtn.Left = 10;
                         EditBtn.Top = eventText.Top + eventText.Height + 3;
@@ -265,28 +277,28 @@ namespace CourseWork
                                 Label note = new Label();
                                 if (_eventList[i].IsCanceled)
                                 {
-                                    note.Text = Language.getControlText("smallPanelCanceledReason", this.Name) + "\r\n";
+                                    note.Text = Language.getElementText("smallPanelCanceledReason", this.Name) + "\r\n";
                                     if (_eventList[i].IsCanceledReason.Trim() != "")
                                     {
                                         note.Text += cutText(_eventList[i].IsCanceledReason, 50);
                                     }
                                     else
                                     {
-                                        note.Text += Language.getControlText("smallPanelNone", this.Name);
+                                        note.Text += Language.getElementText("smallPanelNone", this.Name);
                                     }
                                 }
                                 else
                                 {
                                     if (_eventList[i].IsHappened)
                                     {
-                                        note.Text = Language.getControlText("smallPanelHappenedRecall", this.Name) + "\r\n";
+                                        note.Text = Language.getElementText("smallPanelHappenedRecall", this.Name) + "\r\n";
                                         if (_eventList[i].IsHappenedNote.Trim() != "")
                                         {
                                             note.Text += cutText(_eventList[i].IsHappenedNote, 50);
                                         }
                                         else
                                         {
-                                            note.Text += Language.getControlText("smallPanelNone", this.Name);
+                                            note.Text += Language.getElementText("smallPanelNone", this.Name);
                                         }
                                     }
                                 }
@@ -361,7 +373,7 @@ namespace CourseWork
             Label eventDate = new Label();
             if (!_switchBtwDateAndNotify)
             {
-                eventDate.Text = Language.getControlText("bigPanelDate", this.Name) + eventForShow.Date.Day + "."
+                eventDate.Text = Language.getElementText("bigPanelDate", this.Name) + "\r\n" + eventForShow.Date.Day + "."
                                           + eventForShow.Date.Month + "."
                                           + eventForShow.Date.Year + " "
                                           + eventForShow.Date.Hour + ":"
@@ -369,7 +381,7 @@ namespace CourseWork
             }
             else
             {
-                eventDate.Text = Language.getControlText("bigPanelNotification", this.Name) + eventForShow.NotificationDateTime.Day + "."
+                eventDate.Text = Language.getElementText("bigPanelNotification", this.Name) + "\r\n" + eventForShow.NotificationDateTime.Day + "."
                                           + eventForShow.NotificationDateTime.Month + "."
                                           + eventForShow.NotificationDateTime.Year + " "
                                           + eventForShow.NotificationDateTime.Hour + ":"
@@ -400,7 +412,7 @@ namespace CourseWork
                 // Кнопка редактирования события
                 Button EditBtn = new Button();
                 EditBtn.Name = eventForShow.ID.ToString();
-                EditBtn.Text = Language.getControlText("bigPanelEdit_btn", this.Name); ;
+                EditBtn.Text = Language.getElementText("bigPanelEdit_btn", this.Name); ;
                 EditBtn.TextAlign = ContentAlignment.MiddleCenter;
                 EditBtn.Left = 10;
                 EditBtn.Top = eventText.Top + eventText.Height + 5;
@@ -418,7 +430,7 @@ namespace CourseWork
                 HappenedBtn.Width = 75;
                 HappenedBtn.Height = 25;
                 HappenedBtn.BackColor = Color.Green;
-                HappenedBtn.Text = Language.getControlText("bigPanelEventHappened_btn", this.Name);
+                HappenedBtn.Text = Language.getElementText("bigPanelEventHappened_btn", this.Name);
                 HappenedBtn.TextAlign = ContentAlignment.MiddleCenter;
                 HappenedBtn.Left = neededEventPanel.Width - HappenedBtn.Width - 85;
                 HappenedBtn.Top = EditBtn.Top;
@@ -431,7 +443,7 @@ namespace CourseWork
                 CanceledBtn.Width = 75;
                 CanceledBtn.Height = 25;
                 CanceledBtn.BackColor = Color.Red;
-                CanceledBtn.Text = Language.getControlText("bigPanelEventCanceled_btn", this.Name); ;
+                CanceledBtn.Text = Language.getElementText("bigPanelEventCanceled_btn", this.Name); ;
                 CanceledBtn.TextAlign = ContentAlignment.MiddleCenter;
                 CanceledBtn.Left = neededEventPanel.Width - HappenedBtn.Width - 5;
                 CanceledBtn.Top = EditBtn.Top;
@@ -445,28 +457,28 @@ namespace CourseWork
                 note.BackColor = Color.Transparent;
                 if (eventForShow.IsCanceled)
                 {
-                    note.Text = Language.getControlText("bigPanelCanceledReason", this.Name) + "\r\n";
+                    note.Text = Language.getElementText("bigPanelCanceledReason", this.Name) + "\r\n";
                     if (eventForShow.IsCanceledReason.Trim() != "")
                     {
                         note.Text += eventForShow.IsCanceledReason;
                     }
                     else
                     {
-                        note.Text += note.Text = Language.getControlText("bigPanelNone", this.Name);
+                        note.Text += note.Text = Language.getElementText("bigPanelNone", this.Name);
                     }
                 }
                 else
                 {
                     if (eventForShow.IsHappened)
                     {
-                        note.Text = Language.getControlText("bigPanelHappenedRecall", this.Name) + "\r\n";
+                        note.Text = Language.getElementText("bigPanelHappenedRecall", this.Name) + "\r\n";
                         if (eventForShow.IsHappenedNote.Trim() != "")
                         {
                             note.Text += eventForShow.IsHappenedNote;
                         }
                         else
                         {
-                            note.Text += Language.getControlText("bigPanelNone", this.Name);
+                            note.Text += Language.getElementText("bigPanelNone", this.Name);
                         }
                     }
                 }
@@ -551,7 +563,7 @@ namespace CourseWork
         }
         private void editEvent(int eventID)
         {
-            VoiceChecker.Stop();
+            VoiceCheckerStop();
 
             _choosenIndexInEventListNow = eventID;
             EditEventForm eef = new EditEventForm(_eventList[_choosenIndexInEventListNow]);
@@ -572,14 +584,14 @@ namespace CourseWork
                 }
             }
 
-            if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceChecker.Start();
+            VoiceCheckerStart();
         }
 
         private void CanceledBtn_Click(object sender, EventArgs e)
         {
             DialogResult dr_check_canceled = MessageBox.Show(
-                Language.getControlText("setEventAsCanceledAttention", this.Name), 
-                Language.getControlText("attention", this.Name), 
+                Language.getElementText("setEventAsCanceledAttention", this.Name), 
+                Language.getElementText("attention", this.Name), 
                 MessageBoxButtons.YesNo);
             if (dr_check_canceled == DialogResult.Yes)
             {
@@ -587,16 +599,16 @@ namespace CourseWork
                 _eventList[_choosenIndexInEventListNow].setEventIsCanceledTrue();
 
                 DialogResult dr_set_note = MessageBox.Show(
-                    Language.getControlText("setReasonOfCancel", this.Name), 
-                    Language.getControlText("attention", this.Name), 
+                    Language.getElementText("setReasonOfCancel", this.Name), 
+                    Language.getElementText("attention", this.Name), 
                     MessageBoxButtons.YesNo);
                 if (dr_set_note == DialogResult.Yes)
                 {
                     NoteForm nf = new NoteForm(
-                        Language.getControlText("noteCANCReason", this.Name),
-                        Language.getControlText("noteCANCReasonDescr", this.Name),
-                        Language.getControlText("noteCANC_btn", this.Name),
-                        Language.getControlText("noteCANCReason_error", this.Name));
+                        Language.getElementText("noteCANCReason", this.Name),
+                        Language.getElementText("noteCANCReasonDescr", this.Name),
+                        Language.getElementText("noteCANC_btn", this.Name),
+                        Language.getElementText("noteCANCReason_error", this.Name));
                     nf.ShowDialog();
                     if (nf.DialogResult == DialogResult.OK)
                     {
@@ -617,8 +629,8 @@ namespace CourseWork
         private void HappenedBtn_Click(object sender, EventArgs e)
         {
             DialogResult dr_check_happened = MessageBox.Show(
-                Language.getControlText("setEventAsHappenedAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("setEventAsHappenedAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
             if (dr_check_happened == DialogResult.Yes)
             {
@@ -626,16 +638,16 @@ namespace CourseWork
                 _eventList[_choosenIndexInEventListNow].setEventIsHappenedTrue();
 
                 DialogResult dr_set_note = MessageBox.Show(
-                Language.getControlText("setRecallAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("setRecallAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
                 if (dr_set_note == DialogResult.Yes)
                 {
                     NoteForm nf = new NoteForm(
-                        Language.getControlText("noteHAPPRecall", this.Name),
-                        Language.getControlText("noteHAPPRecallDescr", this.Name),
-                        Language.getControlText("noteHAPP_btn", this.Name),
-                        Language.getControlText("noteHAPPRecall_error", this.Name));
+                        Language.getElementText("noteHAPPRecall", this.Name),
+                        Language.getElementText("noteHAPPRecallDescr", this.Name),
+                        Language.getElementText("noteHAPP_btn", this.Name),
+                        Language.getElementText("noteHAPPRecall_error", this.Name));
                     nf.ShowDialog();
                     if (nf.DialogResult == DialogResult.OK)
                     {
@@ -735,7 +747,7 @@ namespace CourseWork
         }
         private void addEvent()
         {
-            VoiceChecker.Stop();
+            VoiceCheckerStop();
 
             AddEventForm aef = new AddEventForm();
             aef.ShowDialog();
@@ -747,7 +759,7 @@ namespace CourseWork
             }
             reCreateMainForm();
 
-            if (VoiceAnalizer.getVoiceAnalizer() != null) VoiceChecker.Start();
+            VoiceCheckerStart();
         }
 
         // Изменение размеров главной формы
@@ -770,7 +782,7 @@ namespace CourseWork
         // Смена пользователя
         private void changeUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Language.getControlText("changeUserAttention", this.Name), Language.getControlText("attention", this.Name), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show(Language.getElementText("changeUserAttention", this.Name), Language.getElementText("attention", this.Name), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Restart();
             }
@@ -831,10 +843,10 @@ namespace CourseWork
             _showEvent = Filter.SearchName;
 
             NoteForm nf = new NoteForm(
-                Language.getControlText("noteSRCHName", this.Name),
-                Language.getControlText("noteSRCHNameDescr", this.Name),
-                Language.getControlText("noteSRCH_btn", this.Name),
-                Language.getControlText("noteSRCHName_error", this.Name));
+                Language.getElementText("noteSRCHName", this.Name),
+                Language.getElementText("noteSRCHNameDescr", this.Name),
+                Language.getElementText("noteSRCH_btn", this.Name),
+                Language.getElementText("noteSRCHName_error", this.Name));
             nf.ShowDialog();
             if (nf.DialogResult == DialogResult.OK)
             {
@@ -849,10 +861,10 @@ namespace CourseWork
             _showEvent = Filter.SearchDate;
 
             NoteForm nf = new NoteForm(
-                Language.getControlText("noteSRCHDate", this.Name),
-                Language.getControlText("noteSRCHDateDescr", this.Name),
-                Language.getControlText("noteSRCH_btn", this.Name),
-                Language.getControlText("noteSRCHDate_error", this.Name));
+                Language.getElementText("noteSRCHDate", this.Name),
+                Language.getElementText("noteSRCHDateDescr", this.Name),
+                Language.getElementText("noteSRCH_btn", this.Name),
+                Language.getElementText("noteSRCHDate_error", this.Name));
             nf.ShowDialog();
             if (nf.DialogResult == DialogResult.OK)
             {
@@ -923,7 +935,7 @@ namespace CourseWork
                 if (CheckTime(_eventList[i]))
                 {
                     _indexCheckingEventNow = i;
-                    Notification(_eventList[i].Name, Language.getControlText("notificationAlert", this.Name) + " " + _eventList[i].Date, ToolTipIcon.Warning);
+                    Notification(_eventList[i].Name, Language.getElementText("notificationAlert", this.Name) + " " + _eventList[i].Date, ToolTipIcon.Warning);
                     break;
                 }
             }
@@ -992,8 +1004,8 @@ namespace CourseWork
             if (CompareDateNowAndDateOfEvents())
             {
                 DialogResult dr = MessageBox.Show(
-                Language.getControlText("uncheckedEventsAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("uncheckedEventsAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)

@@ -12,7 +12,7 @@ namespace CourseWork
         static Dictionary<int, Dictionary<string, string>> _controlsText;
         static Dictionary<string, int> _formsIndex;
 
-        public static string getControlText(string ControlName, string formName)
+        public static string getElementText(string ControlName, string formName)
         {
             if (_controlsText[_formsIndex[formName]].ContainsKey(ControlName))
             {

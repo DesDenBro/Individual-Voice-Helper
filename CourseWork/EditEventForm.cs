@@ -22,6 +22,7 @@ namespace CourseWork
 
         #endregion
 
+
         #region --- Методы редактирования события ---
 
         public EditEventForm(Event eventForEdit)
@@ -35,11 +36,11 @@ namespace CourseWork
             eventName_tb.Text = eventForEdit.Name;
             eventText_tb.Text = eventForEdit.Text;
 
-            _date = new Clock(Language.getControlText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
+            _date = new Clock(Language.getElementText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
             _date.setTime(eventForEdit.Date);
             this.Controls.Add(_date.ClockPanel);
 
-            _notification = new Clock(Language.getControlText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            _notification = new Clock(Language.getElementText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
             _notification.setTime(eventForEdit.NotificationDateTime);
             this.Controls.Add(_notification.ClockPanel);
 
@@ -68,11 +69,12 @@ namespace CourseWork
             }
             else
             {
-                MessageBox.Show(Language.getControlText("wroteDataIncorrect_error", this.Name));
+                MessageBox.Show(Language.getElementText("wroteDataIncorrect_error", this.Name));
             }
         }
 
         #endregion
+
 
         #region --- Управление голосом ---
 

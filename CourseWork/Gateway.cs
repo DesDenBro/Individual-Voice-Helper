@@ -17,7 +17,7 @@ namespace CourseWork
         { }
     }
 
-    public class Gateway
+    public static class Gateway
     {
         #region --- Главные переменные --- 
 

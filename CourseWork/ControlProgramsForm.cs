@@ -42,15 +42,15 @@ namespace CourseWork
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog() { Filter = Language.getControlText("filterFiles", this.Name) + " exe|*.exe|" +  Language.getControlText("filterLinks", this.Name) + " lnk|*.lnk" };
+            OpenFileDialog ofd = new OpenFileDialog() { Filter = Language.getElementText("filterFiles", this.Name) + " exe|*.exe|" +  Language.getElementText("filterLinks", this.Name) + " lnk|*.lnk" };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string path = ofd.FileName;
                 NoteForm nf = new NoteForm(
-                    Language.getControlText("notePRName", this.Name),
-                    Language.getControlText("notePRNameDiscr", this.Name),
-                    Language.getControlText("notePR_btn", this.Name),
-                    Language.getControlText("notePRNameAttention", this.Name),
+                    Language.getElementText("notePRName", this.Name),
+                    Language.getElementText("notePRNameDiscr", this.Name),
+                    Language.getElementText("notePR_btn", this.Name),
+                    Language.getElementText("notePRNameAttention", this.Name),
                     ofd.SafeFileName);
                 nf.ShowDialog();
 
@@ -67,8 +67,8 @@ namespace CourseWork
         private void delete_btn_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show(
-                Language.getControlText("deletePRAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("deletePRAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
@@ -91,8 +91,8 @@ namespace CourseWork
             if (_smthChanged)
             {
                 DialogResult dr = MessageBox.Show(
-                Language.getControlText("programCloseAttention", this.Name),
-                Language.getControlText("attention", this.Name),
+                Language.getElementText("programCloseAttention", this.Name),
+                Language.getElementText("attention", this.Name),
                 MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)

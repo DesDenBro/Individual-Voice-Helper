@@ -41,13 +41,13 @@ namespace CourseWork
             _panel.Width = 175;
             _panel.Height = 150;
             _panel.BorderStyle = BorderStyle.FixedSingle;
-            //_panel.BackColor = Color.Green;
 
             // Назначение блока
             Label blockName = new Label();
             blockName.Left = 5;
             blockName.Top = 5;
             blockName.Text = name;
+            blockName.Width = 150;
             _panel.Controls.Add(blockName);
 
             // Дата
@@ -72,7 +72,7 @@ namespace CourseWork
             _timeInString = new Label();
             _timeInString.Left = _pictureBoxForClock.Right;
             _timeInString.Top = _pictureBoxForClock.Top + 5;
-            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n0 \r\n" + Language.getControlText("minutes", "Clock") + "\r\n0";
+            _timeInString.Text = Language.getElementText("hours", "Clock") + "\r\n0 \r\n" + Language.getElementText("minutes", "Clock") + "\r\n0";
             _timeInString.Height = _pictureBoxForClock.Height / 2;
             _panel.Controls.Add(_timeInString);
 
@@ -123,8 +123,6 @@ namespace CourseWork
         // Установить время на часах
         public void setTime(DateTime dateTime)
         {
-            //_date.va = dateTime;
-
             _hour = dateTime.Hour;
             if (_hour >= 12)
             {
@@ -141,7 +139,7 @@ namespace CourseWork
 
             _minute = dateTime.Minute;
 
-            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getControlText("minutes", "Clock") + "\r\n" + _minute.ToString();
+            _timeInString.Text = Language.getElementText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getElementText("minutes", "Clock") + "\r\n" + _minute.ToString();
 
             _pictureBoxForClock.Refresh();
         }
@@ -172,7 +170,7 @@ namespace CourseWork
                     break;
             }
 
-            _timeInString.Text = Language.getControlText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getControlText("minutes", "Clock") + "\r\n" + _minute.ToString();
+            _timeInString.Text = Language.getElementText("hours", "Clock") + "\r\n" + _hour.ToString() + "\r\n" + Language.getElementText("minutes", "Clock") + "\r\n" + _minute.ToString();
 
             _pictureBoxForClock.Refresh();
         }

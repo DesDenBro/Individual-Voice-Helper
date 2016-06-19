@@ -12,19 +12,6 @@ namespace CourseWork
 {
     public partial class SignUpForm : Form
     {
-        #region --- Главные переменные и свойства ---
-
-        private string _login = "";         // Логин пользователя
-        private string _password = "";      // Пароль пользователя
-        private AI _AIForNewUser;           // Голосовой помощник для пользователя
-
-        public string Login { get { return _login; } }
-        public string Password { get { return _password; } }
-        public AI AIForNewUser { get { return _AIForNewUser; } }
-
-        #endregion
-
-
         #region --- Методы для создания пользователя и его голосового помощника ---
 
         // Конструктор формы
@@ -47,34 +34,31 @@ namespace CourseWork
                 {
                     if (newPassword.Text == newPasswordConfirm.Text)
                     {
-                        _login = newLogin.Text;
-                        _password = PasswordStorage.CreateHash(newPassword.Text);
-
                         if (createAIChoose_cb.Checked)
                         {
-                            _AIForNewUser = new AI(Gateway.getCountOfTableRows("User"), getNames(), maleGenderChoose_rb.Checked);
+                            Gateway.addNewAIInDB(new AI(Gateway.getCountOfTableRows("User"), getNames(), maleGenderChoose_rb.Checked));
                         }
-
+                        Gateway.addNewUserInDB(newLogin.Text, PasswordStorage.CreateHash(newPassword.Text));
                         this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
-                        MessageBox.Show(Language.getControlText("equPasswords_error", this.Name));
+                        MessageBox.Show(Language.getElementText("equPasswords_error", this.Name));
                         newPassword.Text = "";
                         newPasswordConfirm.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show(Language.getControlText("userAlreadyExist_error", this.Name));
+                    MessageBox.Show(Language.getElementText("userAlreadyExist_error", this.Name));
                 }
             }
             else
             {
                 if (newPassword.Text == "" && newLogin.Text == "")
-                    MessageBox.Show(Language.getControlText("LogOrPassIsEmpty_error", this.Name));
+                    MessageBox.Show(Language.getElementText("LogOrPassIsEmpty_error", this.Name));
                 if (createAIChoose_cb.Checked && ((!maleGenderChoose_rb.Checked && !femaleSexChoose_rb.Checked) || names_lb.Items.Count <= 0))
-                    MessageBox.Show(Language.getControlText("AIProperties_error", this.Name));
+                    MessageBox.Show(Language.getElementText("AIProperties_error", this.Name));
             }
         }
 
@@ -106,10 +90,10 @@ namespace CourseWork
             if (names_lb.Items.Count < 10)
             {
                 NoteForm nf = new NoteForm(
-                    Language.getControlText("noteAIName", this.Name),
-                    Language.getControlText("noteAINameDescr", this.Name),
-                    Language.getControlText("noteAI_btn", this.Name),
-                    Language.getControlText("noteAIAttention", this.Name));
+                    Language.getElementText("noteAIName", this.Name),
+                    Language.getElementText("noteAINameDescr", this.Name),
+                    Language.getElementText("noteAI_btn", this.Name),
+                    Language.getElementText("noteAIAttention", this.Name));
                 nf.ShowDialog();
 
                 if (nf.DialogResult == DialogResult.OK)
@@ -118,15 +102,15 @@ namespace CourseWork
                         names_lb.Items.Add(TranslitWord.GetTranslit(nf.Note));
                     else
                         MessageBox.Show(
-                            Language.getControlText("AINameLength_error", this.Name),
-                            Language.getControlText("attention", this.Name), 
+                            Language.getElementText("AINameLength_error", this.Name),
+                            Language.getElementText("attention", this.Name), 
                             MessageBoxButtons.OK);
                 }
             }
             else
                 MessageBox.Show(
-                        Language.getControlText("AINamesCount_error", this.Name),
-                        Language.getControlText("attention", this.Name),
+                        Language.getElementText("AINamesCount_error", this.Name),
+                        Language.getElementText("attention", this.Name),
                         MessageBoxButtons.OK);
         }
 
@@ -137,8 +121,8 @@ namespace CourseWork
                 names_lb.Items.RemoveAt(names_lb.SelectedIndex);
             else
                 MessageBox.Show(
-                    Language.getControlText("AINameDoesntChooseForDelete_error", this.Name),
-                    Language.getControlText("attention", this.Name),
+                    Language.getElementText("AINameDoesntChooseForDelete_error", this.Name),
+                    Language.getElementText("attention", this.Name),
                     MessageBoxButtons.OK);
         }
 

@@ -24,10 +24,10 @@ namespace CourseWork
             Control.ControlCollection tempControls = this.Controls;
             Language.setControlsText(ref tempControls, this.Name);
 
-            _date = new Clock(Language.getControlText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
+            _date = new Clock(Language.getElementText("blockNameDate", this.Name), 10, eventName_tb.Bottom + 10);
             this.Controls.Add(_date.ClockPanel);
 
-            _notification = new Clock(Language.getControlText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
+            _notification = new Clock(Language.getElementText("blockNameNotification", this.Name), _date.ClockPanel.Right + 3, _date.ClockPanel.Top);
             this.Controls.Add(_notification.ClockPanel);
 
             if (VoiceAnalizer.getVoiceAnalizer() != null) voiceChecker.Start();
@@ -99,10 +99,10 @@ namespace CourseWork
                 }
                 else
                 {
-                    MessageBox.Show(Language.getControlText("wroteDataIncorrect_error", this.Name));
+                    MessageBox.Show(Language.getElementText("wroteDataIncorrect_error", this.Name));
                 }
             }
-            catch { MessageBox.Show(Language.getControlText("someMistake", this.Name)); }   
+            catch { MessageBox.Show(Language.getElementText("someMistake", this.Name)); }   
         }
 
         // Забрать готовое событие

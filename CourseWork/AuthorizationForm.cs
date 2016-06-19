@@ -47,7 +47,7 @@ namespace CourseWork
 
             if (!access)
             {
-                MessageBox.Show(Language.getControlText("auth_error", this.Name));
+                MessageBox.Show(Language.getElementText("auth_error", this.Name));
             }
             else
             {
@@ -73,15 +73,6 @@ namespace CourseWork
         {
             SignUpForm suf = new SignUpForm(_numberOfUsers);
             suf.ShowDialog();
-            if (suf.DialogResult == DialogResult.OK)
-            {
-                Gateway.addNewUserInDB(suf.Login, suf.Password);
-                if (suf.AIForNewUser != null)
-                {
-                    Gateway.addNewAIInDB(suf.AIForNewUser);
-                }
-                Login_tb.Text = suf.Login;
-            }
         }
 
         #endregion
